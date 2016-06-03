@@ -1,0 +1,14 @@
+The remote name could not be resolved: '195.64.160.20inplaybanner' - 5/25/2016 2:15:04 PM
+The remote name could not be resolved: '195.64.160.20inplaybanner' - 5/25/2016 2:16:02 PM
+The remote name could not be resolved: '195.64.160.20inplaybanner' - 5/25/2016 2:18:10 PM
+The remote name could not be resolved: '195.64.160.20inplaybanner' - 5/25/2016 2:20:01 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:48:01 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:48:01 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:48:01 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:48:01 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:49:54 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:49:54 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:49:55 PM
+The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:49:55 PM
+The operation has timed out. - 5/31/2016 8:50:29 AM
+The operation has timed out. - 5/31/2016 8:52:10 AM

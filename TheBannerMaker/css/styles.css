@@ -1,0 +1,555 @@
+﻿@font-face {
+
+    font-family: kelsonSans;
+
+    src: url(../fonts/KelsonSansBoldBG.otf);
+
+}
+
+body {
+
+    margin: 0;
+
+    padding:0;
+
+}
+
+
+
+#efbet {
+
+    position: absolute;
+
+    width: 265px;
+
+    height: 72px;
+
+    background-image: url('https://cdn1.efbet.com/efbet/BannerImages/images/efbetLogoNew_03.png');
+
+    background-size: contain;
+
+    left: 47px;
+
+    top: 44px;
+
+    z-index:2000;
+
+    background-repeat:no-repeat;
+
+}
+
+
+
+#promotionText {
+
+    position: absolute;
+
+    font-size: 62px;
+
+    line-height: 67px;
+
+    top: 140px;
+
+    left: 47px;
+
+    color: #fcde05;
+
+    z-index: 2000;
+
+    font-family: kelsonSans;
+
+}
+
+
+
+.background {
+
+    background-color: black;
+
+    width: 1073px;
+
+    height: 320px;
+
+    padding: 0;
+
+    margin: 0;
+
+    overflow-y: hidden;
+
+    position: relative;
+
+}
+
+
+
+
+
+.line1 {
+
+    width: 0;
+
+    height: 0;
+
+    border-style: solid;
+
+    border-width: 320px 147px 0 0;
+
+    border-color: black transparent transparent transparent;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 549px;
+
+    z-index: 1000;
+
+}
+
+
+
+.line2 {
+
+    height: 320px;
+
+    width: 614px;
+
+    background-image: url('https://cdn1.efbet.com/efbet/BannerImages/images/allSports_02.jpg');
+
+    background-position-x: 2px;
+
+    position: absolute; 
+
+    left: 459px;
+
+    top: 0;
+
+}
+
+
+
+.line3 {
+
+    height: 320px;
+
+    width: 550px;
+
+    background-color: black;
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+}
+
+
+
+.header-rectangle {
+
+    position: absolute;
+
+    height: 75px;
+
+    width: 651px;
+
+    background-color: #fcde05;
+
+    z-index: 1001;
+
+}
+
+
+
+.header-triangle {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 650px;
+
+    width: 0;
+
+    height: 0;
+
+    border-style: solid;
+
+    border-width: 75px 37px 0 0;
+
+    border-color: #fcdf05 transparent transparent transparent;
+
+    z-index: 1001;
+
+}
+
+
+
+.selection-draw-yellow-box {
+
+    position: absolute;
+
+    left: 440px;
+
+    top: 163px;
+
+    z-index: 1001;
+
+    width: 145px;
+
+    height: 55px;
+
+    background-color: #fcdf05;
+
+}
+
+
+
+.selection-draw-triangle {
+
+    position: absolute;
+
+    left: 584px;
+
+    top: 163px;
+
+    width: 0;
+
+    height: 0;
+
+    border-style: solid;
+
+    border-width: 55px 25px 0 0;
+
+    border-color: #fcdf05 transparent transparent transparent;
+
+    z-index: 1001;
+
+}
+
+
+
+.horisontal-line {
+
+    position: absolute;
+
+    left: 35px;
+
+    top: 189px;
+
+    height: 3px;
+
+    width: 570px;
+
+    background-color: #fcdf05;
+
+}
+
+
+
+.text {
+
+    font-family: kelsonSans;
+
+    position: relative;
+
+    left: 35px;
+
+    top: 0;
+
+    width: 535px;
+
+    height: 279px;
+
+    z-index: 1002;
+
+}
+
+
+
+.header {
+
+    color: black;
+
+    line-height: 40px;
+
+    padding-top: 7px;
+
+}
+
+
+
+.match-name {
+    /*font-size: 34px;
+    font-weight: bold;
+    width: 120%;*/
+
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-size: 34px;
+    /* font-size: 3.5vw; */
+    font-weight: bold;
+    width: 115%;
+    overflow: hidden;
+
+}
+
+.market111 {
+	
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    
+    /* font-size: 3.5vw; */
+         overflow: hidden;
+}
+
+.matchName1 {
+    /*font-size: 34px;
+    font-weight: bold;
+    width: 120%;*/
+
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-size: 34px;
+    /* font-size: 3.5vw; */
+    font-weight: bold;
+    width: 125%;
+    overflow: hidden;
+
+}
+
+
+
+
+.marketName1 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 27px;
+    width: 120%;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.sport-market {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 27px;
+    width: 120%;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.selections {
+    padding-top: 36px;
+    color: #fcdf05;
+    font-size: 40px;
+    float: left;
+     white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.selection1 {
+
+    line-height: 45px;
+
+    position: absolute;
+
+    top: 107px;
+    width: 75%;
+	white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+
+}
+
+
+
+.selection2 {
+
+    background-color: black;
+
+    width: 75%;
+
+    position: absolute;
+
+    top: 162px;
+ white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+
+}
+
+
+
+.selection3 {
+
+    line-height: 45px;
+
+    padding-top: 5px;
+
+    position: absolute;
+
+    top: 227px;
+	    width: 75%;
+ 	white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+
+
+.odds {
+
+    text-align: right;
+
+    padding-top: 30px;
+
+    color: #fcdf05;
+
+    position: absolute;
+
+    top: 76px;
+
+    font-size: 52px;
+
+    right: 5px;
+
+    width: 75px;
+
+}
+
+
+
+
+
+.odd1 {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 0;
+
+}
+
+
+
+
+
+
+
+.odd3 {
+
+    position: absolute;
+
+    top: 151px;
+
+    right: 0;
+
+}
+
+
+
+.odd2 {
+
+    position: absolute;
+
+    font-size: 44px;
+
+    color: black;
+
+    top: 90px;
+
+    right: 0;
+
+}
+
+
+
+.logo {
+
+    position: absolute;
+
+    z-index: 1003;
+
+    right: 0;
+
+    bottom: 0;
+
+    background-image: url('https://cdn1.efbet.com/efbet/BannerImages/images/efbetlogoBlack_03.png');
+
+    width: 131px;
+
+    height: 37px;
+
+}
+
+
+
+.header-rectangle1 {
+
+    position: absolute;
+
+    height: 320px;
+
+    width: 541px;
+
+    background-color: black;
+
+    z-index: 1002;
+
+}
+
+
+
+
+
+.header-triangle1 {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 541px;
+
+    width: 0;
+
+    height: 0;
+
+    border-style: solid;
+
+    border-width: 320px 153px 0 0;
+
+    border-color: black transparent transparent transparent;
+
+    z-index: 1001;
+
+}
+

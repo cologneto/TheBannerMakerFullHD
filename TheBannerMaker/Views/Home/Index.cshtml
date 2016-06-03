@@ -1,0 +1,118 @@
+﻿
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-md-6">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Select Language", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("Language", ViewData["languages"] as List<SelectListItem>, "Please select language.", new { @class = "form-control" })
+
+                @*//"Seleelalskd",
+                    @Html.ValidationMessageFor(model => model.SportName, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Select Sport", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("Sport", ViewData["sports"] as List<SelectListItem>, "Please select sport.", new { @class = "form-control", @id = "sports" })
+
+            </div>
+
+            <div class="col-md-offset-2 col-md-4">
+                <input type="button" id="btnAddMarket" value="Add Market" class="btn btn-default" />
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Select Tournament", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("Tournament", new SelectList(string.Empty, "Value", "Text"), "Please select a tournament", new { @class = "form-control", @id = "tournaments" })
+
+            </div>
+
+            <div class="col-md-offset-2 col-md-4">
+                <input type="button" id="btnToDatabase" value="Add To Database" class="btn btn-default" />
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Select Match", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("Match", new SelectList(string.Empty, "Value", "Text"), "Please select a match", new { @class = "form-control", @id = "matches", @multiple = "multiple", @size = "30" })
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="markets">Select Markets</label>
+                    <select class="form-control" id="markets" name="Markets" multiple="multiple" size="30"></select>
+                </div>
+                <div class="col-md-offset-2"></div>
+                <a href="~/HtmlBanners/BannerFullHDSingleMarket.html">To Banner</a>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group">
+                <label class="control-label col-md-2" for="markets">Is In Play Now</label>
+
+                <div class="col-md-4">
+                    <input id="isInPlayNow" type="checkbox" value="" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2" for="markets">Is Special</label>
+
+                <div class="col-md-4">
+                    <input id="isSpecial" type="checkbox" value="" />
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="col-md-6">
+        <div id="sortable">
+
+            <div class="MarketContainer" bgcolor="red">
+                <p class="MatchName"></p>
+                <p class="MatchId"></p>
+                <p class="MatchInPlayId"></p>
+                <p class="MatchStart"></p>
+                <p class="MarketName"></p>
+                <p class="IsInPlay"></p>
+                <p class="IsInPlayNow"></p>
+                <p class="IsSpecial"></p>
+                <input type="button" id="deleteMarket" value="Remove" hidden="hidden" />
+            </div>
+
+        </div>
+    </div>
+}
+
+<div>
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Scripts/scripts.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

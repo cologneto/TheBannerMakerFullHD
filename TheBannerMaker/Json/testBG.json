@@ -1,0 +1,662 @@
+[
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Краен изход",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Коста Рика",
+        "SelectionValue": 3.1
+      },
+      {
+        "SelectionName": "Равен",
+        "SelectionValue": 3.1
+      },
+      {
+        "SelectionName": "Парагвай",
+        "SelectionValue": 2.7
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Азиатски хендикап 0.5",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Коста Рика +0,5",
+        "SelectionValue": 1.55
+      },
+      {
+        "SelectionName": "Парагвай -0,5",
+        "SelectionValue": 2.65
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Азиатски хендикап +0,+0.5",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Коста Рика +0,25",
+        "SelectionValue": 1.7
+      },
+      {
+        "SelectionName": "Парагвай -0,25",
+        "SelectionValue": 2.2
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Азиатски хендикап -0,-0.5",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Коста Рика -0,25",
+        "SelectionValue": 2.55
+      },
+      {
+        "SelectionName": "Парагвай +0,25",
+        "SelectionValue": 1.55
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Азиатски хендикап -0.5",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Коста Рика -0,5",
+        "SelectionValue": 3.0
+      },
+      {
+        "SelectionName": "Парагвай +0,5",
+        "SelectionValue": 1.45
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Точен резултат",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Коста Рика - Парагвай 6-0",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 5-1",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 5-0",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 4-2",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 4-1",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 4-0",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 3-2",
+        "SelectionValue": 62.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 3-1",
+        "SelectionValue": 35.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 3-0",
+        "SelectionValue": 39.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 2-1",
+        "SelectionValue": 12.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 2-0",
+        "SelectionValue": 13.5
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 1-0",
+        "SelectionValue": 7.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 0-0",
+        "SelectionValue": 6.5
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 1-1",
+        "SelectionValue": 5.75
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 0-1",
+        "SelectionValue": 6.25
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 0-2",
+        "SelectionValue": 11.25
+      },
+      {
+        "SelectionName": "Друг",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 1-2",
+        "SelectionValue": 11.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 0-3",
+        "SelectionValue": 30.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 1-3",
+        "SelectionValue": 29.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 2-3",
+        "SelectionValue": 56.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 0-4",
+        "SelectionValue": 105.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 1-4",
+        "SelectionValue": 105.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 2-4",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 0-5",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 1-5",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 0-6",
+        "SelectionValue": 125.0
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 2-2",
+        "SelectionValue": 19.25
+      },
+      {
+        "SelectionName": "Коста Рика - Парагвай 3-3",
+        "SelectionValue": 125.0
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Коста Рика - Най-резултатно полувреме",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Първo",
+        "SelectionValue": 3.8
+      },
+      {
+        "SelectionName": "Втори",
+        "SelectionValue": 2.7
+      },
+      {
+        "SelectionName": "Равни",
+        "SelectionValue": 1.95
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "Коста Рика - Парагвай",
+    "MatchId": "4783528.1",
+    "MatchInplayId": "4907924.1",
+    "MatchTime": "6/5/2016 12:00:00 AM",
+    "Market": "Парагвай - Най-резултатно полувреме",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Първo",
+        "SelectionValue": 3.65
+      },
+      {
+        "SelectionName": "Втори",
+        "SelectionValue": 2.6
+      },
+      {
+        "SelectionName": "Равни",
+        "SelectionValue": 2.05
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": "Краен изход",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "САЩ",
+        "SelectionValue": 3.05
+      },
+      {
+        "SelectionName": "Равен",
+        "SelectionValue": 3.2
+      },
+      {
+        "SelectionName": "Колумбия",
+        "SelectionValue": 2.65
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": "Азиатски хендикап +0,+0.5",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "САЩ +0,25",
+        "SelectionValue": 1.75
+      },
+      {
+        "SelectionName": "Колумбия -0,25",
+        "SelectionValue": 2.2
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": "Азиатски хендикап -0.5",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "САЩ -0,5",
+        "SelectionValue": 2.95
+      },
+      {
+        "SelectionName": "Колумбия +0,5",
+        "SelectionValue": 1.45
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": "Първо полувреме - Азиатски хендикап -0,-0.5",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "САЩ -0,25",
+        "SelectionValue": 2.95
+      },
+      {
+        "SelectionName": "Колумбия +0,25",
+        "SelectionValue": 1.45
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": "Първо полувреме - Линия голове 0.5 ",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Под 0.5",
+        "SelectionValue": 2.55
+      },
+      {
+        "SelectionName": "Над 0.5",
+        "SelectionValue": 1.55
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": "Първо полувреме/Краен изход - Точен резултат",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "0:1 - 0:3",
+        "SelectionValue": 48.0
+      },
+      {
+        "SelectionName": "0:1 - 0:2",
+        "SelectionValue": 17.0
+      },
+      {
+        "SelectionName": "0:1 - 1:1",
+        "SelectionValue": 16.25
+      },
+      {
+        "SelectionName": "0:1 - 1:2",
+        "SelectionValue": 26.0
+      },
+      {
+        "SelectionName": "0:1 - 2:1",
+        "SelectionValue": 54.0
+      },
+      {
+        "SelectionName": "0:1 - 4+",
+        "SelectionValue": 19.5
+      },
+      {
+        "SelectionName": "0:2 - 0:2",
+        "SelectionValue": 43.0
+      },
+      {
+        "SelectionName": "0:2 - 0:3",
+        "SelectionValue": 60.0
+      },
+      {
+        "SelectionName": "0:2 - 1:2",
+        "SelectionValue": 66.0
+      },
+      {
+        "SelectionName": "0:2 - 4+",
+        "SelectionValue": 27.0
+      },
+      {
+        "SelectionName": "0:3 - 0:3",
+        "SelectionValue": 90.0
+      },
+      {
+        "SelectionName": "0:3 - 4+",
+        "SelectionValue": 80.0
+      },
+      {
+        "SelectionName": "1:0 - 1:0",
+        "SelectionValue": 13.75
+      },
+      {
+        "SelectionName": "1:0 - 1:1",
+        "SelectionValue": 16.25
+      },
+      {
+        "SelectionName": "1:0 - 1:2",
+        "SelectionValue": 49.0
+      },
+      {
+        "SelectionName": "1:0 - 2:0",
+        "SelectionValue": 20.0
+      },
+      {
+        "SelectionName": "1:0 - 2:1",
+        "SelectionValue": 28.0
+      },
+      {
+        "SelectionName": "1:0 - 3:0",
+        "SelectionValue": 62.0
+      },
+      {
+        "SelectionName": "1:0 - 4+",
+        "SelectionValue": 21.0
+      },
+      {
+        "SelectionName": "1:1 - 1:1",
+        "SelectionValue": 20.0
+      },
+      {
+        "SelectionName": "1:1 - 1:2",
+        "SelectionValue": 34.0
+      },
+      {
+        "SelectionName": "1:1 - 2:1",
+        "SelectionValue": 37.0
+      },
+      {
+        "SelectionName": "1:1 - 4+",
+        "SelectionValue": 16.5
+      },
+      {
+        "SelectionName": "1:2 - 1:2",
+        "SelectionValue": 84.0
+      },
+      {
+        "SelectionName": "1:2 - 4+",
+        "SelectionValue": 29.0
+      },
+      {
+        "SelectionName": "2:0 - 2:0",
+        "SelectionValue": 52.0
+      },
+      {
+        "SelectionName": "2:0 - 2:1",
+        "SelectionValue": 72.0
+      },
+      {
+        "SelectionName": "2:0 - 3:0",
+        "SelectionValue": 78.0
+      },
+      {
+        "SelectionName": "2:0 - 4+",
+        "SelectionValue": 33.0
+      },
+      {
+        "SelectionName": "2:1 - 2:1",
+        "SelectionValue": 90.0
+      },
+      {
+        "SelectionName": "2:1 - 4+",
+        "SelectionValue": 32.0
+      },
+      {
+        "SelectionName": "3:0 - 3:0",
+        "SelectionValue": 90.0
+      },
+      {
+        "SelectionName": "3:0 - 4+",
+        "SelectionValue": 90.0
+      },
+      {
+        "SelectionName": "4+ - 4+",
+        "SelectionValue": 26.0
+      },
+      {
+        "SelectionName": "0:0 - 0:0",
+        "SelectionValue": 5.75
+      },
+      {
+        "SelectionName": "0:0 - 0:1",
+        "SelectionValue": 8.5
+      },
+      {
+        "SelectionName": "0:0 - 0:2",
+        "SelectionValue": 24.0
+      },
+      {
+        "SelectionName": "0:0 - 0:3",
+        "SelectionValue": 90.0
+      },
+      {
+        "SelectionName": "0:0 - 1:0",
+        "SelectionValue": 9.25
+      },
+      {
+        "SelectionName": "0:0 - 1:1",
+        "SelectionValue": 12.0
+      },
+      {
+        "SelectionName": "0:0 - 1:2",
+        "SelectionValue": 40.0
+      },
+      {
+        "SelectionName": "0:0 - 2:0",
+        "SelectionValue": 28.0
+      },
+      {
+        "SelectionName": "0:0 - 2:1",
+        "SelectionValue": 44.0
+      },
+      {
+        "SelectionName": "0:0 - 3:0",
+        "SelectionValue": 90.0
+      },
+      {
+        "SelectionName": "0:0 - 4+",
+        "SelectionValue": 38.0
+      },
+      {
+        "SelectionName": "0:1 - 0:1",
+        "SelectionValue": 12.5
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": " \tКой отбор ще отбележи последен гол?",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "САЩ",
+        "SelectionValue": 2.15
+      },
+      {
+        "SelectionName": "Никой",
+        "SelectionValue": 8.25
+      },
+      {
+        "SelectionName": "Колумбия",
+        "SelectionValue": 1.95
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  },
+  {
+    "Sport": "Футбол",
+    "MatchName": "САЩ - Колумбия",
+    "MatchId": "4777463.1",
+    "MatchInplayId": "4900088.1",
+    "MatchTime": "6/4/2016 4:30:00 AM",
+    "Market": "Второ полувреме - Кой отбор ще отбележи първи гол?",
+    "Language": "BG",
+    "Selections": [
+      {
+        "SelectionName": "Няма гол",
+        "SelectionValue": 3.45
+      },
+      {
+        "SelectionName": "САЩ",
+        "SelectionValue": 2.65
+      },
+      {
+        "SelectionName": "Колумбия",
+        "SelectionValue": 2.45
+      }
+    ],
+    "IsInplayNow": false,
+    "IsInplay": false,
+    "IsSpecial": true
+  }
+]

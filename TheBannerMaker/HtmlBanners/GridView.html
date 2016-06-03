@@ -1,0 +1,345 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <style>
+        .red, .green {
+            color: rgb(252, 222,5);
+            background-color: rgba(0, 0,0,0.7);
+        }
+
+        .red {
+            border-right: 3px solid black;
+            margin: 0;
+            padding:0;
+        }
+
+        body {
+            font-family: 'Kelson Sans BG';
+        }
+
+        .headerBan {
+            background-color: rgba(252, 222,5,0.9);
+            
+        }
+
+
+
+        .headerCol {
+            color: black;
+        }
+
+        .playersLine {
+            margin-top: 14px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .wrapper {
+             width: 1073px;
+        height: 320px;
+        padding: 0;
+        margin: 0;
+        overflow-y: hidden;
+        position: relative;
+        background-color: black;
+            
+            background-image: url(https://cdn1.efbet.com/efbet/images/StadiumBackground_02.jpg);
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" style="">
+        <div class="container-fluid">
+            <div class="row headerBan" style="color: white; font-size: 20px;">
+                <div class="col-md-12 headerCol match-name">Atletico Madrid - Bayern Munich</div>
+                <div class="col-md-12 headerCol sport-market">Играч да отбележи гол в мача</div>
+            </div>
+            <div class="marketContent"></div>
+            <script id='bootstrap-template'
+                    type='text/x-jquery-tmpl'>
+
+                {{each data.SelectionListVM}}
+                {{if (($index + 1) %2) !=0}}
+                <div class="row playersLine" style="max-height:65px; line-height: 32px;">
+                    <div class="col-md-6 red">
+                        <div class="col-md-10">${SelectionListVM[$index].SelectionName}</div>
+                        <div class="col-md-2">${SelectionListVM[$index].SelectionValue.toFixed(2)}</div>
+                    </div>
+                    {{else}}
+                    <div class="col-md-6 green">
+                        <div class="col-md-10">${SelectionListVM[$index].SelectionName}</div>
+                        <div class="col-md-2">${SelectionListVM[$index].SelectionValue.toFixed(2)}</div>
+                    </div>
+
+                </div>
+                    {{/if}}
+
+
+
+                {{/each}}
+            </script>
+
+            <script>
+                var data = {
+
+                    "Id": 1302,
+
+                    "Sport": "Р¤СѓС‚Р±РѕР»",
+
+                    "MatchName": "Atletico Madrid Vs Bayern Munich",
+
+                    "MatchId": null,
+
+                    "MatchTime": "2016-04-27T19:45:00",
+
+                    "Market": "First Goalscorer",
+
+                    "Language": "UK",
+
+                    "MatchDisplayDate": "2016-04-27T21:45:00",
+
+                    "SelectionListVM": [
+
+                      {
+
+                          "SelectionName": "Robert Lewandowski",
+
+                          "SelectionValue": 3.8
+
+                      },
+
+                      {
+
+                          "SelectionName": "Thomas Muller",
+
+                          "SelectionValue": 4.0
+
+                      },
+
+                      {
+
+                          "SelectionName": "Antoine Griezmann",
+
+                          "SelectionValue": 4.05
+
+                      },
+
+                      {
+
+                          "SelectionName": "Arjen Robben",
+
+                          "SelectionValue": 5.5
+
+                      },
+
+                      {
+
+                          "SelectionName": "Luciano Dario Vietto",
+
+                          "SelectionValue": 5.75
+
+                      },
+
+                      {
+
+                          "SelectionName": "Fernando Jose Torres Sanz",
+
+                          "SelectionValue": 5.75
+
+                      },
+
+                      {
+
+                          "SelectionName": "Julian Wesley Green",
+
+                          "SelectionValue": 6.25
+
+                      },
+
+                      {
+
+                          "SelectionName": "Angel Martin Correa",
+
+                          "SelectionValue": 6.5
+
+                      },
+
+                      {
+
+                          "SelectionName": "Mario Gotze",
+
+                          "SelectionValue": 7.25
+
+                      },
+
+                      {
+
+                          "SelectionName": "Kingsley Coman",
+
+                          "SelectionValue": 8.25
+
+                      }
+
+                    ]
+
+                };
+                $('#bootstrap-template')
+  			        .tmpl(data).appendTo('.marketContent');
+
+            </script>
+        
+
+        </div>
+    </div>
+</body>
+</html>-->
+
+
+<div class="container-fluid">
+    <div class="row headerBan" style="color: white; font-size: 20px;">
+        <div class="col-md-12 headerCol">Atletico Madrid - Bayern Munich</div>
+        <div class="col-md-12 headerCol ">Играч да отбележи гол в мача</div>
+    </div>
+    <div class="marketContent"></div>
+    <script id='bootstrap-template'
+            type='text/x-jquery-tmpl'>
+
+        {{each data.SelectionListVM}}
+        {{if (($index + 1) %2) !=0}}
+        <div class="row playersLine" style="max-height:65px; line-height: 32px;">
+            <div class="col-md-6 red">
+                <div class="col-md-10">${SelectionListVM[$index].SelectionName}</div>
+                <div class="col-md-2">${SelectionListVM[$index].SelectionValue.toFixed(2)}</div>
+            </div>
+            {{else}}
+            <div class="col-md-6 green">
+                <div class="col-md-10">${SelectionListVM[$index].SelectionName}</div>
+                <div class="col-md-2">${SelectionListVM[$index].SelectionValue.toFixed(2)}</div>
+            </div>
+
+        </div>
+        {{/if}}
+
+
+
+        {{/each}}
+    </script>
+
+    <script>
+                //var data = {
+
+                //    "Id": 1302,
+
+                //    "Sport": "Р¤СѓС‚Р±РѕР»",
+
+                //    "MatchName": "Atletico Madrid Vs Bayern Munich",
+
+                //    "MatchId": null,
+
+                //    "MatchTime": "2016-04-27T19:45:00",
+
+                //    "Market": "First Goalscorer",
+
+                //    "Language": "UK",
+
+                //    "MatchDisplayDate": "2016-04-27T21:45:00",
+
+                //    "SelectionListVM": [
+
+                //      {
+
+                //          "SelectionName": "Robert Lewandowski",
+
+                //          "SelectionValue": 3.8
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Thomas Muller",
+
+                //          "SelectionValue": 4.0
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Antoine Griezmann",
+
+                //          "SelectionValue": 4.05
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Arjen Robben",
+
+                //          "SelectionValue": 5.5
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Luciano Dario Vietto",
+
+                //          "SelectionValue": 5.75
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Fernando Jose Torres Sanz",
+
+                //          "SelectionValue": 5.75
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Julian Wesley Green",
+
+                //          "SelectionValue": 6.25
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Angel Martin Correa",
+
+                //          "SelectionValue": 6.5
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Mario Gotze",
+
+                //          "SelectionValue": 7.25
+
+                //      },
+
+                //      {
+
+                //          "SelectionName": "Kingsley Coman",
+
+                //          "SelectionValue": 8.25
+
+                //      }
+
+                //    ]
+
+                //};
+                //$('#bootstrap-template')
+  			    //    .tmpl(data).appendTo('.marketContent');
+
+    </script>
+
+
+</div>

@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/jquery.tmpl.min.js"></script>
+    <script src="../Scripts/scripts1.js"></script>
+    <style>
+        .red, .green {
+            color: rgb(252, 222,5);
+            background-color: rgba(0, 0,0,0.7);
+        }
+
+        .red {
+            border-right: 3px solid black;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Kelson Sans BG';
+        }
+
+        .headerBan {
+            background-color: rgba(252, 222,5,0.9);
+        }
+
+
+
+        .headerCol {
+            color: black;
+        }
+
+        .playersLine {
+            margin-top: 14px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .background2 {
+            width: 1073px;
+            height: 320px;
+            background-image: url(https://cdn1.efbet.com/efbet/images/StadiumBackground_02.jpg);
+        }
+
+        #inplay {
+            position: absolute;
+            color: #fcdf05;
+            right: 426px;
+            top: 40px;
+            font-size: 16px;
+            z-index: 4000;
+            font-weight: bold;
+            border: 5px solid black;
+            border-radius: 19px;
+            background-color: black;
+        }
+    </style>
+
+</head>
+<body onload="ajaxCall2UK();" style="cursor: pointer;">
+    <div class="background">
+        <div id="inplay" style="display: none;">IN PLAY</div>
+        <div id="efbet"></div>
+        <div id="promotionText">
+            Live online <br />
+            sports betting!
+        </div>
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="header-rectangle"></div>
+        <div class="header-triangle"></div>
+        <div class="header-rectangle1"></div>
+        <div class="header-triangle1"></div>
+        <div class="selection-draw-yellow-box" style="display: none;"></div>
+        <div class="selection-draw-triangle" style="display: none;"></div>
+        <div class="horisontal-line"></div>
+        <div class="text">
+            <div class="header">
+                <div class="match-name">
+
+                </div>
+                <div class="sport-market">
+
+                </div>
+            </div>
+            <div class="selections">
+                <div class="selection1">
+
+                </div>
+                <div class="selection2">
+
+                </div>
+                <div class="selection3">
+
+                </div>
+            </div>
+            <div class="odds">
+                <div class="odd1"></div>
+                <div class="odd2"></div>
+                <div class="odd3"></div>
+            </div>
+        </div>
+        <div class="logo">
+
+        </div>
+
+    </div>
+    <div class="background2" style="display: none;">
+
+        <div class="marketContent">
+
+        </div>
+        <script id='bootstrap-template'
+                type='text/x-jquery-tmpl'>
+            <div class="container-fluid">
+                <div class="row headerBan" style="color: white; font-size: 20px;">
+                    <div class="col-md-12 headerCol matchName1">${data.MatchName}</div>
+                    <div class="col-md-12 headerCol marketName2">${data.Market}</div>
+                </div>
+
+                {{each data.Selections}}
+                {{if (($index + 1) %2) !=0}}
+                <div class="row playersLine" style="max-height:65px; line-height: 32px;">
+                    <div class="col-md-6 red">
+                        <div class="col-md-10 market111">${Selections[$index].SelectionName}</div>
+                        <div class="col-md-2">${Selections[$index].SelectionValue.toFixed(2)}</div>
+                    </div>
+                    {{else}}
+                    <div class="col-md-6 green">
+                        <div class="col-md-10 market111">${Selections[$index].SelectionName}</div>
+                        <div class="col-md-2">${Selections[$index].SelectionValue.toFixed(2)}</div>
+                    </div>
+
+                </div>
+                {{/if}}
+
+
+
+                {{/each}}
+            </div>
+        </script>
+
+        <script>
+            var data;
+            $.getJSON("../Json/testBG.json", function (json) {
+                console.log(json); // this will show the info it in firebug console
+                //https://cdn1.efbet.com/efbet/XML/test.json
+
+                for (var i = 0; i < json.length; i++) {
+                    if(json[i].Selections.length > 4){
+                        data = json[i];
+                    }
+                }
+
+                data.Selections = data.Selections.splice(0, 10);
+
+                $('#bootstrap-template')
+  			    .tmpl(data).appendTo('.marketContent');
+            });
+
+        </script>
+
+    </div>
+
+</body>
+</html>
