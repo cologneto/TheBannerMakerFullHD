@@ -77,6 +77,8 @@ function fillMatchOdds(arrayOfMatchOdds) {
     var awayTeam = arrayOfMatchOdds[0].Selections[2].SelectionName;
     
     if (arrayOfMatchOdds[0].Language == "UK") {
+        $('body').find(".selectionsAndOdds").find('img').css('margin-right', '-20px');
+
         if (arrayOfMatchOdds[0].IsInplay) {
             cupLogo.find('img').attr("src", "..\\FlagsEurope\\logo.png");
             homeFlag.attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlagsUK(homeTeam) + "-flag-medium.png");
@@ -160,37 +162,6 @@ function fillMatchOdds(arrayOfMatchOdds) {
             currTwelveCounter = 0;
         }
 
-        //}
-
-        //else if ((i + 1) % 2 != 0 && i <= 5) {
-        //    $(this).find('.selection1').text(arrayOfMatchOdds[5].Selections[i].SelectionName).css({
-        //        'font-size': '40px',
-        //        'padding-top': '35px'
-        //    });
-        //    $(this).find('.selection3').text(arrayOfMatchOdds[5].Selections[i + 1].SelectionName).css({
-        //        'font-size': '40px',
-        //        'padding-top': '35px'
-        //    });
-        //    $(this).find('.odd1').text(arrayOfMatchOdds[5].Selections[i].SelectionValue.toFixed(2));
-        //    $(this).find('.odd3').text(arrayOfMatchOdds[5].Selections[i + 1].SelectionValue.toFixed(2));
-
-        //}
-        //else if ((i + 1) % 2 === 0 && i <= 5) {
-        //    $(this).find('.selection1').text(arrayOfMatchOdds[5].Selections[i + 2].SelectionName).css({
-        //        'font-size': '40px',
-        //        'padding-top': '35px'
-        //    });
-        //    $(this).find('.selection3').text(arrayOfMatchOdds[5].Selections[i + 3].SelectionName).css({
-        //        'font-size': '40px',
-        //        'padding-top': '35px'
-        //    });
-        //    $(this).find('.odd1').text(arrayOfMatchOdds[5].Selections[i + 2].SelectionValue.toFixed(2));
-        //    $(this).find('.odd3').text(arrayOfMatchOdds[5].Selections[i + 3].SelectionValue.toFixed(2));
-
-        //}
-        //else {
-        //    return false;
-        //}
     });
 
     //4-3 way markets
