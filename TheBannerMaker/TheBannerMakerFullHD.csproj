@@ -162,6 +162,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HtmlBanners\BannerFullHDSingleMarketUK.html" />
     <Content Include="HtmlBanners\BannerFullHDSingleMarket.html" />
     <Content Include="HtmlBanners\LiveMarketsAll.html" />
     <Content Include="HtmlBanners\TestCORS.html" />

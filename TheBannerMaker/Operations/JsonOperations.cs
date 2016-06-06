@@ -123,7 +123,7 @@ namespace TheBannerMaker.Operations
             FtpWebRequest objFTPRequest;
 
             // Create FtpWebRequest object
-            objFTPRequest = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + "/InplayBanner/Json/" + objFile.Name));
+            objFTPRequest = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + "/CupBanners/Json/" + objFile.Name));
 
             // Set Credintials
             objFTPRequest.Credentials = new NetworkCredential(ftpUserName, ftpPassword);
