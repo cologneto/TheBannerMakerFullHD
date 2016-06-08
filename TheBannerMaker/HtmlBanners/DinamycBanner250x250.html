@@ -2,36 +2,110 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
-    
+    <meta charset="utf-8" />
+
+    <style>
+        body {
+            font-size: 26px;
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .row1, .row2, .row3 {
+            position: relative;
+            left: 5px;
+            top: 65px;
+        }
+
+        .odd {
+            position: absolute;
+            top: 0;
+            right: 5px;
+        }
+
+        .row2, .row3 {
+            margin-top: 35px;
+        }
+    </style>
 </head>
 <body style="margin:0;padding:0;">
-    <div style="background-image: url(../images/250x250.jpg);width:250px;height:250px;">
 
+    <div class="container" width="250" height="250" style="background-image: url(../images/250x250background.jpg);width:250px;height:250px;position:fixed;">
+        <div id="rows" style="display:block;">
+            <div class="row1">
+                <div class="selection">France</div>
+                <div class="odd">1.22</div>
+            </div>
+            <div class="row2">
+                <div class="selection">Draw</div>
+                <div class="odd pull-right">5.25</div>
+            </div>
+            <div class="row3">
+                <div class="selection">Romania</div>
+                <div class="odd">13.00</div>
+            </div>
+        </div>
     </div>
     <script>
-        function loadJSON(path, success, error) {
+        var dailyMatches = [];
+        var selections = document.getElementsByClassName('selection');
+        var odds = document.getElementsByClassName('odd');
+        var counter = 0;
+
+
+        function loadJSON(path, success, error, callback) {
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status === 200) {
                         if (success)
                             success(JSON.parse(xhr.responseText));
-                    } else {
+                    }
+
+                    else {
                         if (error)
                             error(xhr);
                     }
                 }
             };
+
             xhr.open("GET", path, true);
             xhr.send();
         };
 
         loadJSON('../Json/testBG.json',
-             function (data) { console.log(data); },
-             function (xhr) { console.error(xhr); }
+             function (data) {
+                 makeOdds(data)
+             },
+
+             function (xhr) {
+                 console.error(xhr);
+             }
+
         );
+
+        function makeOdds(oddsArray) {
+            console.log(oddsArray.length);
+            var threeWayMarkets = [];
+            for (var i = 0; i < oddsArray.length / 8; i++) {
+                if (i === 0) {
+                    threeWayMarkets[i] = oddsArray[i];
+                }
+                else {
+                    threeWayMarkets[i] = oddsArray[i + 8];
+                }
+            }
+
+            console.log(document.getElementById('rows').style.display);
+            setInterval(document.getElementById('rows').style.display = "", 5000);
+
+        }
+
+        function changeSlides(arrOdds) {
+            arrOdds[counter]
+        }
 
     </script>
 </body>
+
 </html>

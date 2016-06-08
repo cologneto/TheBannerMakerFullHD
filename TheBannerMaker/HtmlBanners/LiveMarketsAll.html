@@ -8,20 +8,22 @@
 
     <title>Xml example</title>
 
-    <link href="css/bootstrap.css" rel="stylesheet" />
-
+    
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
     <script>
-
+        var currentHeight = 0;
         function ajaxCall() {
 
             $.ajax({
 
                 type: "GET",
-
-                url: "https://www.efbet.com/cache/marketsByEvent/BG/4759203.1.xml",
-
+                //==============================
+                //========Place ID here==========
+                //===============================
+                url: "https://www.efbet.com/cache/marketsByEvent/BG/4924742.1.xml",
+                //===============================
                 dataType: "xml",
 
                 success: xmlParser,
@@ -34,19 +36,40 @@
 
                     setTimeout(ajaxCall, interval);
 
+                    
                 }
 
             });
 
         };
-
+        // ==== Add zero to time==
         function addZero(i) {
             if (i < 10) {
                 i = "0" + i;
             }
             return i;
         }
+        //==================== Scroll ==================================================================
+        window.setInterval(scrollit, 5000);                                                                //======
+                                                                                                           //======
+        function scrollit() {                                                                              //======
+            //console.log(($(".main").scrollTop() + $(".main").innerHeight()));                               //======
+            //console.log($("#main")[0].scrollHeight)                                                        //======
+            //                                                                                 //======
+            if (($(".main").scrollTop() + $(".main").innerHeight()) >= $(".main")[0].scrollHeight)         //======
+                $('.main').animate({ scrollTop: 0 }, 100).delay(900);                                      //======
+            else                                                                                           //======
+                $('.main').animate({ scrollTop: $(".main").scrollTop() + 540 }, 'slow', function () {       //======
+                    //console.log($(".main")[0].scrollHeight)                                                //======
+                });                                                                                        //======
+        }
 
+        
+        //======
+        // ================= Scroll End =============================================================
+
+
+        //================== Parsing XML and add html to body ===========================
 
         function xmlParser(xml) {
             $('#load').fadeOut();
@@ -56,11 +79,11 @@
 
             var time = addZero(dt.getHours()) + ":" + addZero(dt.getMinutes()) + ":" + addZero(dt.getSeconds());
 
-            $('.main').append('<div class="time">' + time + '</div>');
+            //$('.main').append('<div class="time">' + time + '</div>');
 
             $(xml).find("externaldescription").each(function (index) {
                 var marketName = $(this).text();
-
+                //$('.main').append('<img class="efbetLogo" src="../images/EfbetLogo.png" alt="Efbet" width="400" height="100" />');
                 $('.main').append('<div class="row r' + index + '">' + '<div class="col-md-12 marketName">' + marketName + '</div>');
                 var selection = $(this).parent().find('selection');
 
@@ -68,9 +91,10 @@
 
                     if (selection.length == 2) {
 
-                        $('.r' + index).append('<div class="col-md-6 selection">' + $(this).find('name').text() +
-
-                       '   ' + '<span class="pull-right">' + ((1 + parseInt($(this).find('currentpriceup').text()) / parseInt($(this).find('currentpricedown').text()))).toFixed(2) + '</span>' + '</div>');
+                        $('.r' + index).append('<div class="col-md-6 selection">'
+                            + $(this).find('name').text() +
+                       '   ' + '<span class="pull-right">'
+                       + ((1 + parseInt($(this).find('currentpriceup').text()) / parseInt($(this).find('currentpricedown').text()))).toFixed(2) + '</span>' + '</div>');
 
                     }
 
@@ -78,54 +102,96 @@
 
                         $('.r' + index).append('<div class="col-md-6 selection">' + $(this).find('name').text() +
 
-                                               '   ' + '<span class="pull-right">' + ((1 + parseInt($(this).find('currentpriceup').text()) / parseInt($(this).find('currentpricedown').text()))).toFixed(2) + '</span>' + '</div>');
+                                               '   ' + '<div class="pull-right odd" onchange="console.log(this);">' + ((1 + parseInt($(this).find('currentpriceup').text()) / parseInt($(this).find('currentpricedown').text()))).toFixed(2) + '</div>' + '</div>');
 
                     }
+                    //console.log($('.r' + index).position());
                 });
-
+                if (selection.length % 2 !=0) {
+                    $('.r' + index).append('<div class="col-md-6 selection" style="height: 143px;"></div>');
+                }
                 $('.main').append('</div>');
 
+                
+               //if (currentHeight >= "800") {
+                   
+               //    currentHeight = 0;
+               //    return false;
+               //}
             });
+            
 
-
+            //$('.odd').each(function () {
+            //    $(this).on("change",(function () {
+            //        console.log("Handler for .change() called.");
+            //    })());
+            //});
         }
+
+        //====== End parsing xml 
         setTimeout(ajaxCall, interval);
-        var interval = 10000;
-        $('span').bind("DOMSubtreeModified", function () {
+        var interval = 2000;
+        
 
-            alert('changed');
-
-        });
+       
     </script>
 
     <style>
-        span {
-            color: #ffdd00;
+        body {
+            overflow: hidden;
+            background-image: url(../images/Background.jpg);
         }
 
+        .odd {
+           color: black;
+            font-size: 92px;
+            font-weight: bold;
+        }
+        .efbetLogo {
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
         .main {
-            background-color: darkgrey;
+            height: 1080px;
+            width: 1920px;
+            max-height: 1080px !important;
+            max-width: 1920px !important;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            color: white;
+            margin-left: 20px;
+            padding-right: 20px;
+            padding-left:0;
+            overflow-y:scroll;
+            /*overflow-y: no-display;*/
+            /*padding-right: 20px;*/
         }
 
         .marketName {
-            background-color: grey;
-            font-size: 1.8em;
+            background-color: black;
+            font-size: 92px;
             color: white;
             padding: 5px;
+            text-align: center;
         }
 
 
 
         .selection {
-            background-color: darkgrey;
-            font-size: 1.5em;
-            color: white;
+            background-color: #fddc00;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            font-size: 5.5em;
+            color: black;
+            font-weight: bold;
             padding: 5px;
             border: 1px solid #5c5c5c;
         }
 
 
+        .row {
+            margin:110px 0 70px 0;
 
+        }
         .time {
             font-size: 1.7em;
             color: green;
@@ -135,7 +201,7 @@
 </head>
 
 <body>
-
+    <div style="z-index: 2000;position: fixed;width:100%;font-size:100px;background-color:black; color:white;">EFBET На - Живо </div>
     <div class="main container-fluid">
 
         <div align="center" class="loader"><img src="01-progress.gif" id="load" width="16" height="11" align="middle" /></div>

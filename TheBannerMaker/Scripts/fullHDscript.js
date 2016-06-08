@@ -123,6 +123,9 @@ function fillMatchOdds(arrayOfMatchOdds) {
 
     twoWay.find('.row').each(function (i) {
         //.css('font-size', '50px')
+        if (arrayOfMatchOdds[i + 1] == null) {
+            return false;
+        }
         $(this).find('.marketText span').text(arrayOfMatchOdds[i + 1].Market);
         $(this).find('.selectionsAndOdds .selection1').text(arrayOfMatchOdds[i + 1].Selections[0].SelectionName)
             .css({
@@ -139,10 +142,20 @@ function fillMatchOdds(arrayOfMatchOdds) {
     });
 
     //12 way markets 
-    twelveWay.find('.marketText span').text(arrayOfMatchOdds[5].Market);
+    if (arrayOfMatchOdds[5] != null) {
+        twelveWay.find('.marketText span').text(arrayOfMatchOdds[5].Market);
+    }
     twelveWay.find('.selectionsAndOdds').each(function (i) {
+        if (arrayOfMatchOdds.length < 4) {
+            return false;
+            
+        }
 
-
+        if (currTwelveCounter >= arrayOfMatchOdds[5].Selections.length) {
+            currTwelveCounter = 0;
+            return false;
+        }
+        
         //if (i == 0) {
         $(this).find('.selection1').text(arrayOfMatchOdds[5].Selections[currTwelveCounter].SelectionName).css({
             'font-size': '40px',
@@ -166,6 +179,10 @@ function fillMatchOdds(arrayOfMatchOdds) {
 
     //4-3 way markets
     fourWay.find('.row').each(function (i) {
+        if (arrayOfMatchOdds[i + 6] == null) {
+            return false;
+        }
+
         $(this).find('.marketText span').text(arrayOfMatchOdds[i + 6].Market);
         $(this).find('.selectionsAndOdds').each(function (n) {
             if (arrayOfMatchOdds[i + 6].Selections.length == 3 && n == 1) {
