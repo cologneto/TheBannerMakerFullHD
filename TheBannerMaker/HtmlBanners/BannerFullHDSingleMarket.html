@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <script src="../Scripts/jquery-1.10.2.min.js"></script>
-    
+
     <style>
         .main-container {
             height: 1080px;
@@ -46,7 +46,17 @@
             color: black;
             font-size: 92px;
             font-weight: bold;
+            white-space: nowrap;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            /* font-size: 3.5vw; */
+            overflow: hidden;
         }
+
+        /*.selection1, .selection3{
+            width: 75%;
+        }*/
 
         .marketName {
             padding-top: 20px;
@@ -60,6 +70,8 @@
 
             .marketText span {
                 border-top: 5px solid #fddc00;
+                border-left: 5px solid #fddc00;
+                border-right: 5px solid #fddc00;
                 /*border-bottom: 3px solid #fddc00;*/
                 font-size: 60px;
                 padding: 0 30px 0 30px;
@@ -67,23 +79,30 @@
 
             .marketText img {
                 position: absolute;
-                top:1px;
-                height:80px;
+                top: 1px;
+                height: 80px;
             }
+
+        .casinoImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4000;
+        }
     </style>
-    
+
 </head>
 <body onload="start();">
     <div class="container-fluid main-container">
         <div class="row ins" style="padding-top: 15px;">
             <div class="col-lg-4 text-center homeFlag">
-                <img src="..\FlagsAmerica\argentinian-flag-medium.png" alt="Home flag" width="110" height="80" class="pull-right" />
+                <img src="" alt="Home flag" width="110" height="80" class="pull-right" />
             </div>
             <div class="col-lg-4 text-center efbetLogo">
                 <img src="../images/EfbetLogo.png" alt="Efbet" width="400" height="100" />
             </div>
             <div class="col-lg-4 text-center awayFlag">
-                <img src="..\FlagsAmerica\brazilian-flag-medium.png" alt="Away flag" width="110" height="80" class="pull-left" />
+                <img src="" alt="Away flag" width="110" height="80" class="pull-left" />
             </div>
         </div>
         <div class="slideshow">
@@ -91,13 +110,13 @@
             <div class="oneMarket slide">
                 <div class="row">
                     <div class="col-lg-5 text-center homeTeamLogo">
-                        <img src="..\FlagsAmerica\Argentina.png" alt="Home Team Logo" width="520" height="520" class=""/>
+                        <img src="" alt="Home Team Logo" width="520" height="520" class="" />
                     </div>
                     <div class="col-lg-2 text-center euroLogo">
                         <img src="" alt="" width="200" height="200" class="" />
                     </div>
                     <div class="col-lg-5 text-center awayTeamLogo">
-                        <img src="..\FlagsAmerica\Brazil.png" alt="Away Team Logo" width="520" height="520" class="" />
+                        <img src="" alt="Away Team Logo" width="520" height="520" class="" />
                     </div>
                 </div>
                 <div class="row" style="height:100px;">
@@ -106,19 +125,23 @@
                 <div class="row" style="height:280px; background-image:url(../images/YellowFat_02.png);">
                     <div class="col-lg-5 text-center">
                         <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="220" style="margin-top:28px;" />
-                        <div class="selection1">Аржентина</div>
-                        <div class="odd1">1.90</div>
+                        <div class="selection1"></div>
+                        <div class="odd1"></div>
                     </div>
                     <div class="col-lg-2 text-center">
-                        <div class="selection2">Равен</div>
-                        <div class="odd2">10.00</div>
+                        <div class="selection2"></div>
+                        <div class="odd2"></div>
                     </div>
                     <div class="col-lg-5 text-center">
                         <img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />
-                        <div class="selection3">Бразилия</div>
-                        <div class="odd3">1.90</div>
+                        <div class="selection3"></div>
+                        <div class="odd3"></div>
                     </div>
                 </div>
+            </div>
+
+            <div class="slide casinoImage">
+                <img src="../images/casino1.jpg" alt="" />
             </div>
 
 
@@ -128,23 +151,23 @@
                     <div class="marketName">
 
                         <div class="marketText text-center">
-                            <img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />
+
                             <span style="background-color:black; font-size: 60px;">Двата Отбора да Отбележат </span>
-                            <img src="../images/rightMarket.png" alt="" />
+
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
@@ -153,23 +176,23 @@
                     <div class="marketName">
 
                         <div class="marketText text-center">
-                            <img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />
+                            <!--<img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />-->
                             <span style="background-color:black;">Двата Отбора да Отбележат </span>
-                            <img src="../images/rightMarket.png" alt="" />
+                            <!--<img src="../images/rightMarket.png" alt="" />-->
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
@@ -178,23 +201,23 @@
                     <div class="marketName">
 
                         <div class="marketText text-center">
-                            <img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />
-                            <span style="background-color:black;">Двата Отбора да Отбележат </span>
-                            <img src="../images/rightMarket.png" alt="" />
+                            <!--<img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />-->
+                            <span style="background-color:black;"></span>
+                            <!--<img src="../images/rightMarket.png" alt="" />-->
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
@@ -203,29 +226,32 @@
                     <div class="marketName">
 
                         <div class="marketText text-center">
-                            <img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />
-                            <span style="background-color:black;">Двата Отбора да Отбележат </span>
-                            <img src="../images/rightMarket.png" alt="" />
+                            <!--<img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />-->
+                            <span style="background-color:black;"></span>
+                            <!--<img src="../images/rightMarket.png" alt="" />-->
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                 </div>
             </div>
 
+            <div class="slide casinoImage">
+                <img src="../images/casino2.jpg" alt="" />
+            </div>
 
             <div class="goalscorer slide" style="">
 
@@ -233,93 +259,93 @@
                     <div class="marketName">
 
                         <div class="marketText text-center">
-                            <img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />
+                            <!--<img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />-->
                             <span style="background-color:black;">Двата Отбора да Отбележат </span>
-                            <img src="../images/rightMarket.png" alt="" />
+                            <!--<img src="../images/rightMarket.png" alt="" />-->
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
@@ -328,7 +354,9 @@
 
             </div>
 
-
+            <div class="slide casinoImage">
+                <img src="../images/casino3.jpg" alt="" />
+            </div>
             <div class="tripleMarkets slide" style="">
 
 
@@ -336,37 +364,37 @@
                     <div class="marketName">
 
                         <div class="marketText text-center">
-                            <img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />
+                            <!--<img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />-->
                             <span style="background-color:black;">Двата Отбора да Отбележат Гол и Над/Под 2.5 гола</span>
-                            <img src="../images/rightMarket.png" alt="" />
+                            <!--<img src="../images/rightMarket.png" alt="" />-->
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
@@ -375,37 +403,37 @@
                     <div class="marketName">
 
                         <div class="marketText text-center">
-                            <img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />
+                            <!--<img src="../images/leftMarket.png" alt="" style="margin-left: -40px;" />-->
                             <span style="background-color:black;">Двата Отбора да Отбележат </span>
-                            <img src="../images/rightMarket.png" alt="" />
+                            <!--<img src="../images/rightMarket.png" alt="" />-->
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
                     <div class="selectionsAndOdds" style="height:130px; background-image:url(../images/YellowFat_02.png);">
                         <div class="col-lg-6 text-center">
                             <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="90" style="margin-top:28px;margin-left: 10px;" />
-                            <div class="selection1 pull-left">Аржентина</div>
-                            <div class="odd1 pull-right">1.90</div>
+                            <div class="selection1 pull-left"></div>
+                            <div class="odd1 pull-right"></div>
                         </div>
 
                         <div class="col-lg-6 text-center">
                             <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
-                            <div class="selection3 pull-left">Бразилия</div>
-                            <div class="odd3 pull-right">1.90</div>
+                            <div class="selection3 pull-left"></div>
+                            <div class="odd3 pull-right"></div>
                         </div>
 
                     </div>
@@ -416,5 +444,6 @@
         </div>
     </div>
     <script src="../Scripts/fullHDscript.js"></script>
+    <script src="../Scripts/testSchedule.js"></script>
 </body>
 </html>

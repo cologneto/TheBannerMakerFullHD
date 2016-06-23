@@ -162,6 +162,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HtmlBanners\250x250.html" />
+    <Content Include="HtmlBanners\300x300.html" />
+    <Content Include="HtmlBanners\300x600.html" />
+    <Content Include="HtmlBanners\463x300.html" />
+    <Content Include="HtmlBanners\600x275.html" />
+    <Content Include="HtmlBanners\640x100.html" />
+    <Content Include="HtmlBanners\980x110.html" />
+    <Content Include="HtmlBanners\980x200.html" />
     <Content Include="HtmlBanners\BannerFullHDSingleMarketUK.html" />
     <Content Include="HtmlBanners\BannerFullHDSingleMarket.html" />
     <Content Include="HtmlBanners\DinamycBanner250x250.html" />
@@ -196,6 +204,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\fullHDscript.js" />
+    <Content Include="Scripts\fullHDscriptUK.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -207,7 +216,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\scriptsDynamic.js" />
     <Content Include="Scripts\scripts1.js" />
+    <Content Include="Scripts\testSchedule.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -249,6 +260,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DynamicBanners\" />
     <Folder Include="FlagsAmerica\" />
     <Folder Include="FlagsEurope\" />
     <Folder Include="NewFolder1\" />

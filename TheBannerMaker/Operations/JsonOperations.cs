@@ -17,7 +17,7 @@ namespace TheBannerMaker.Operations
         public static List<MatchVisualModel> GetDailyMatches(string bannerLanguage)
         {
             var date = DateTime.Now.Date;
-            var lastDate = DateTime.Now.Date.AddDays(1).AddHours(5);
+            var lastDate = DateTime.Now.Date.AddDays(1).AddHours(6);
             var maxDate = DateTime.Now.AddMinutes(20);
             //.AddDays(1).Date
             //Change matches Id from prematch to in play
@@ -49,9 +49,9 @@ namespace TheBannerMaker.Operations
                     ctx.SaveChanges();
                 }
             }
-
-            var matches = ctx.MatchesDatabase.Where(m => m.IsInplayNow == true && m.Language == bannerLanguage).ToList();
-            matches.AddRange(ctx.MatchesDatabase.Where(m => m.IsSpecial == true && m.MatchDisplayDate > maxDate && m.Language == bannerLanguage).OrderBy(x => x.Id).ToList());
+            //.AddRange
+            //var matches = ctx.MatchesDatabase.Where(m => m.IsInplayNow == true && m.Language == bannerLanguage).ToList();
+            var matches=ctx.MatchesDatabase.Where(m => m.IsSpecial == true && m.MatchDisplayDate > maxDate && m.Language == bannerLanguage).OrderBy(x => x.Id).ToList();
             var matchesPrematch = ctx.MatchesDatabase
                                            .Where(dm => dm.MatchDisplayDate >= date && dm.Language == bannerLanguage && dm.IsSpecial != true)
                                            .OrderBy(x => x.Id)

@@ -8,12 +8,14 @@
 
     <title>Xml example</title>
 
-    
-    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
     <script>
         var currentHeight = 0;
+        var homeName = "";
+        var awayName = "";
         function ajaxCall() {
 
             $.ajax({
@@ -22,8 +24,10 @@
                 //==============================
                 //========Place ID here==========
                 //===============================
-                url: "https://www.efbet.com/cache/marketsByEvent/BG/4924742.1.xml",
+                url: "https://www.efbet.com/cache/marketsByEvent/BG/5023825.1.xml",
                 //===============================
+                //=================================
+                //=================================
                 dataType: "xml",
 
                 success: xmlParser,
@@ -36,7 +40,7 @@
 
                     setTimeout(ajaxCall, interval);
 
-                    
+
                 }
 
             });
@@ -51,7 +55,7 @@
         }
         //==================== Scroll ==================================================================
         window.setInterval(scrollit, 5000);                                                                //======
-                                                                                                           //======
+        //======
         function scrollit() {                                                                              //======
             //console.log(($(".main").scrollTop() + $(".main").innerHeight()));                               //======
             //console.log($("#main")[0].scrollHeight)                                                        //======
@@ -64,7 +68,7 @@
                 });                                                                                        //======
         }
 
-        
+
         //======
         // ================= Scroll End =============================================================
 
@@ -87,7 +91,7 @@
                 $('.main').append('<div class="row r' + index + '">' + '<div class="col-md-12 marketName">' + marketName + '</div>');
                 var selection = $(this).parent().find('selection');
 
-                selection.each(function () {
+                selection.each(function (si) {
 
                     if (selection.length == 2) {
 
@@ -99,7 +103,20 @@
                     }
 
                     else {
-
+                        if (index == 0) {
+                            if (si == 0) {
+                                homeName = $(this).find('name').text();
+                                $('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+                                
+                                //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags() + "-flag-medium.png");
+                            }
+                            if (si == 2) {
+                                awayName = $(this).find('name').text();
+                                $('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
+                                //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags($(this).find('name').text()) + "-flag-medium.png");
+                            }
+                            switchTeamLogosAndFlags()
+                        }
                         $('.r' + index).append('<div class="col-md-6 selection">' + $(this).find('name').text() +
 
                                                '   ' + '<div class="pull-right odd" onchange="console.log(this);">' + ((1 + parseInt($(this).find('currentpriceup').text()) / parseInt($(this).find('currentpricedown').text()))).toFixed(2) + '</div>' + '</div>');
@@ -107,19 +124,19 @@
                     }
                     //console.log($('.r' + index).position());
                 });
-                if (selection.length % 2 !=0) {
+                if (selection.length % 2 != 0) {
                     $('.r' + index).append('<div class="col-md-6 selection" style="height: 143px;"></div>');
                 }
                 $('.main').append('</div>');
 
-                
-               //if (currentHeight >= "800") {
-                   
-               //    currentHeight = 0;
-               //    return false;
-               //}
+
+                //if (currentHeight >= "800") {
+
+                //    currentHeight = 0;
+                //    return false;
+                //}
             });
-            
+
 
             //$('.odd').each(function () {
             //    $(this).on("change",(function () {
@@ -127,16 +144,198 @@
             //    })());
             //});
         }
-
-        //====== End parsing xml 
+        $('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+        $('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
+        //====== End parsing xml
         setTimeout(ajaxCall, interval);
         var interval = 2000;
-        
 
-       
+        function switchTeamLogosAndFlags(team) {
+            switch (team) {
+                //Американски отбори
+                case "САЩ":
+                    return "american";
+                case "Аржентина":
+                    return "argentinian";
+                case "Боливия":
+                    return "bolivian";
+                case "Бразилия":
+                    return "brazilian";
+                case "Чили":
+                    return "chilean";
+                case "Колумбия":
+                    return "colombian";
+                case "Коста Рика":
+                    return "costa-rican";
+                case "Еквадор":
+                    return "ecuadorian";
+                case "Хаити":
+                    return "haitian";
+                case "Ямайка":
+                    return "jamaican";
+                case "Мексико":
+                    return "mexican";
+                case "Панама":
+                    return "panamanian";
+                case "Парагвай":
+                    return "paraguayan";
+                case "Перу":
+                    return "peruvian";
+                case "Уругвай":
+                    return "uruguayan";
+                case "Венецуела":
+                    return "venezuelan";
+
+                    //Европейски отбори
+                case "Албания":
+                    return "albanian";
+                case "Австрия":
+                    return "austrian";
+                case "Белгия":
+                    return "belgian";
+                case "Хърватска":
+                    return "croatian";
+                case "Чехия":
+                    return "czech";
+                case "Англия":
+                    return "english";
+                case "Франция":
+                    return "french";
+                case "Германия":
+                    return "german";
+                case "Унгария":
+                    return "hungarian";
+                case "Исландия":
+                    return "icelander";
+                case "Ирландия":
+                    return "irish";
+                case "Италия":
+                    return "italian";
+                case "Северна Ирландия":
+                    return "nirish";
+                case "Полша":
+                    return "polish";
+                case "Португалия":
+                    return "portuguese";
+                case "Румъния":
+                    return "romanian";
+                case "Русия":
+                    return "russian";
+                case "Словакия":
+                    return "slovakian";
+                case "Испания":
+                    return "spanish";
+                case "Швеция":
+                    return "swedish";
+                case "Швейцария":
+                    return "swiss";
+                case "Турция":
+                    return "turkish";
+                case "Украйна":
+                    return "ukrainian";
+                case "Уелс":
+                    return "wales";
+                default:
+
+            }
+        };
+
+        function switchTeamLogosAndFlagsUK(team) {
+            switch (team) {
+                //Американски отбори
+                case "Usa":
+                    return "american";
+                case "Argentina":
+                    return "argentinian";
+                case "Bolivia":
+                    return "bolivian";
+                case "Brazil":
+                    return "brazilian";
+                case "Chile":
+                    return "chilean";
+                case "Colombia":
+                    return "colombian";
+                case "Costa Rica":
+                    return "costa-rican";
+                case "Ecuador":
+                    return "ecuadorian";
+                case "Haiti":
+                    return "haitian";
+                case "Jamaica":
+                    return "jamaican";
+                case "Mexico":
+                    return "mexican";
+                case "Panama":
+                    return "panamanian";
+                case "Paraguay":
+                    return "paraguayan";
+                case "Peru":
+                    return "peruvian";
+                case "Uruguay":
+                    return "uruguayan";
+                case "Venezuela":
+                    return "venezuelan";
+
+                    //Европейски отбори
+                case "Albania":
+                    return "albanian";
+                case "Austria":
+                    return "austrian";
+                case "Belgium":
+                    return "belgian";
+                case "Croatia":
+                    return "croatian";
+                case "Czech Republic":
+                    return "czech";
+                case "England":
+                    return "english";
+                case "France":
+                    return "french";
+                case "Germany":
+                    return "german";
+                case "Hungary":
+                    return "hungarian";
+                case "Iceland":
+                    return "icelander";
+                case "Republic of Ireland":
+                    return "irish";
+                case "Italy":
+                    return "italian";
+                case "Northern Ireland":
+                    return "nirish";
+                case "Poland":
+                    return "polish";
+                case "Portugal":
+                    return "portuguese";
+                case "Romania":
+                    return "romanian";
+                case "Russia":
+                    return "russian";
+                case "Slovakia":
+                    return "slovakian";
+                case "Spain":
+                    return "spanish";
+                case "Sweden":
+                    return "swedish";
+                case "Switzerland":
+                    return "swiss";
+                case "Turkey":
+                    return "turkish";
+                case "Ukraine":
+                    return "ukrainian";
+                case "Wales":
+                    return "wales";
+                default:
+
+            }
+        };
+
+        
+        //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+        //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
     </script>
 
-    <style>
+    <style type="text/css">
         body {
             overflow: hidden;
             background-image: url(../images/Background.jpg);
@@ -185,28 +384,52 @@
             font-weight: bold;
             padding: 5px;
             border: 1px solid #5c5c5c;
+            border-bottom:none;
+            border-left: none;
         }
 
 
         .row {
             margin:110px 0 70px 0;
-
+            background-color: #fddc00;
         }
         .time {
             font-size: 1.7em;
             color: green;
+        }
+
+        #inplay {
+            position: absolute;
+            color: #fcdf05;
+            left: 56px;
+            top: 20px;
+            font-size: 45px;
+            z-index: 4000;
+            font-weight: bold;
+            border: 5px solid #fcdf05;
+            border-radius: 19px;
+            background-color: black;
         }
     </style>
 
 </head>
 
 <body>
-    <div style="z-index: 2000;position: fixed;width:100%;font-size:100px;background-color:black; color:white;">EFBET На - Живо </div>
+    <div id="inplay">НА ЖИВО</div>
+    
+    <div class="col-lg-12" style="padding-top: 15px; z-index:3000; background-color:black;position:fixed;">
+        <div class="col-lg-4 text-center homeFlag">
+            <img src="" alt="Home flag" width="110" height="80" class="pull-right" style="border: 1px solid white;" />
+        </div>
+        <div class="col-lg-4">
+            <img src="../images/EfbetLogo.png" alt="Efbet" width="400" height="100" style="margin-left:40px;" />
+        </div>
+        <div class="col-lg-4 text-center awayFlag">
+            <img src="" alt="Away flag" width="110" height="80" class="pull-left" style="border: 1px solid white;"/>
+        </div>
+    </div>
+    <!--<div style="z-index: 2000;position: fixed;width:100%;font-size:100px;background-color:black; color:white;">EFBET На - Живо </div>-->
     <div class="main container-fluid">
-
-        <div align="center" class="loader"><img src="01-progress.gif" id="load" width="16" height="11" align="middle" /></div>
-
-
 
     </div>
 

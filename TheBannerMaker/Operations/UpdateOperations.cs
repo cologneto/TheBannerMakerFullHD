@@ -95,7 +95,7 @@ namespace TheBannerMaker.Operations
             var now = DateTime.Now;
             var db = new Context();
             
-            var matchesForDelete = db.MatchesDatabase.Where(om => (om.IsInplayNow == true) && (om.MatchDisplayDate < nowLive));
+            var matchesForDelete = db.MatchesDatabase.Where(om => om.MatchDisplayDate < nowLive);
 
             if (matchesForDelete.Count() != 0)
             {

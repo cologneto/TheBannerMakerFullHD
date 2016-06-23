@@ -120,7 +120,7 @@ try {
                 return "austrian";
             case "Белгия":
                 return "belgian";
-            case "Хърватска":
+            case "Хърватия":
                 return "croatian";
             case "Чехия":
                 return "czech";
@@ -406,14 +406,24 @@ try {
 
     function changeSlides(index) {
         console.log(dailyMatches[index]);
-        fillMatchOdds(dailyMatches[index]);
+        try {
+            fillMatchOdds(dailyMatches[index]);
+        } catch (e) {
+            setTimeout(function () {
+                console.log();
+                console.log(e.message);
+                location.reload(true);
+            }, 2000);
+        }
+
+        
         var count = 0;
 
         $('.slideshow .slide').hide(); // hide all slides
         $('.slideshow .slide:first-child').show(); // show first slide
         setInterval(function () {
             counterSlides++;
-            if (counterSlides === 7) {
+            if (counterSlides === 4) {
                 counterDailyMatches++;
 
                 counterSlides = 0;
@@ -436,7 +446,16 @@ try {
                 }
 
                 //setTimeout(function () {
-                fillMatchOdds(dailyMatches[counterDailyMatches]);
+                try {
+                    fillMatchOdds(dailyMatches[counterDailyMatches]);
+                } catch (e) {
+                    setTimeout(function () {
+                        console.log();
+                        console.log(e.message);
+                        location.reload(true);
+                    }, 2000);
+                }
+                
                 $('.slideshow').remove();
                 slideShow.insertAfter('.ins');
                 //}, 8000);
@@ -449,17 +468,10 @@ try {
         }, 10000);
 
     }
-    //asldcjal();
 
 } catch (e) {
-
-    setTimeout(function () {
-        console.log();
-        console.log(e.message);
-        location.reload(true);
-    }, 60000);
+    
 }
-
 
 
 

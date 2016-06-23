@@ -13,3 +13,70 @@ The remote server returned an error: (553) File name not allowed. - 5/25/2016 2:
 The operation has timed out. - 5/31/2016 8:50:29 AM
 The operation has timed out. - 5/31/2016 8:52:10 AM
 The remote server returned an error: (553) File name not allowed. - 6/3/2016 4:45:01 PM
+The operation has timed out. - 6/11/2016 9:56:52 PM
+The operation has timed out. - 6/16/2016 12:48:55 PM
+Unable to connect to the remote server - 6/17/2016 3:37:51 PM
+Unable to connect to the remote server - 6/17/2016 3:38:12 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/17/2016 3:43:34 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/17/2016 3:43:37 PM
+The operation has timed out. - 6/17/2016 4:28:59 PM
+The operation has timed out. - 6/17/2016 4:32:10 PM
+System error. - 6/17/2016 10:35:53 PM
+Unable to connect to the remote server - 6/17/2016 10:43:11 PM
+Unable to connect to the remote server - 6/17/2016 10:43:32 PM
+Unable to connect to the remote server - 6/17/2016 10:48:09 PM
+System error. - 6/17/2016 10:49:49 PM
+Unable to connect to the remote server - 6/17/2016 11:05:33 PM
+Unable to connect to the remote server - 6/17/2016 11:05:54 PM
+Unable to connect to the remote server - 6/17/2016 11:06:47 PM
+Unable to connect to the remote server - 6/17/2016 11:07:08 PM
+Unable to connect to the remote server - 6/18/2016 1:12:35 AM
+Unable to connect to the remote server - 6/18/2016 1:12:56 AM
+The operation has timed out. - 6/18/2016 8:05:25 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:05:57 PM
+Unable to connect to the remote server - 6/18/2016 8:06:44 PM
+The operation has timed out. - 6/18/2016 8:07:19 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:07:51 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:07:51 PM
+The operation has timed out. - 6/18/2016 8:22:10 PM
+The operation has timed out. - 6/18/2016 8:23:14 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:32:59 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:32:59 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:33:24 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:33:24 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:35:36 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:35:36 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:36:06 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:36:06 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:38:18 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:38:18 PM
+The remote server returned an error: 227 Entering Passive Mode (195,64,160,20,103,236)
+. - 6/18/2016 8:39:09 PM
+The remote server returned an error: 227 Entering Passive Mode (195,64,160,20,44,236)
+. - 6/18/2016 8:39:30 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:40:06 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:40:06 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:42:17 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:42:17 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:42:41 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:42:41 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:44:56 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:44:56 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:45:23 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:45:23 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:47:34 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:47:34 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:51:17 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:51:17 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:53:28 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:53:28 PM
+The remote server returned an error: 227 Entering Passive Mode (195,64,160,20,71,221)
+. - 6/18/2016 8:55:23 PM
+The remote server returned an error: 227 Entering Passive Mode (195,64,160,20,229,74)
+. - 6/18/2016 8:55:44 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:56:50 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:56:50 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:59:02 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:59:02 PM
+Unable to connect to the remote server - 6/22/2016 1:25:05 AM
+Unable to connect to the remote server - 6/22/2016 1:25:26 AM

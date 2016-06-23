@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Efbet 300x600 Banner</title>
+    <meta charset="utf-8" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 462px;
+            height: 300px;
+            text-transform: uppercase;
+        }
+
+        div {
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .background {
+            background-image: url(../images/462x300background.jpg);
+            position: fixed;
+           width: 462px;
+            height: 300px;
+        }
+
+        .container {
+            position: relative;
+            
+            height: 510px;
+            overflow: hidden;
+        }
+
+        .homeTeam, .awayTeam, .dd {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .awayTeam {
+            /*margin-bottom: 20px;*/
+        }
+
+        .cupLogo {
+            margin: 27px 0 10px 0;
+        }
+
+        .marketName, .selection {
+            color: black;
+            font-size: 20px;
+            background-color: #ffdd00;
+            font-weight: bold;
+            margin: 10px 0 10px 0;
+        }
+
+        .marketName {
+            margin-bottom: 15px;
+        }
+
+        .selection {
+            width: 462px;
+            margin-left: -15px;
+        }
+
+        .nopadding {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
+    <script src="../Scripts/scriptsDynamic.js"></script>
+</head>
+
+<body onload="ajaxCall2()">
+    <div class="background"></div>
+        
+    <div class="container">
+        <div class="row text-center" >
+            <div class="col-xs-6"></div>
+            <img src="" class="cupLogo" width="90" height="43" alt="" />
+        </div>
+        <div class="row">
+            <div class="col-xs-5 homeTeam text-right"></div>
+            <div class="col-xs-2 dd text-center">-</div>
+            <div class="col-xs-5 awayTeam text-left"></div>
+
+        </div>
+
+
+        <div class="marketWrapper">
+            <div class="row">
+                <div class="marketName text-center">
+
+                </div>
+            </div>
+
+            <div class="row selection">
+                <div class="col-sm-8 selection1 pull-left"></div>
+                <div class="col-sm-4 pull-right odd1"></div>
+            </div>
+            <div class="row selection">
+                <div class="col-sm-8 selection2 pull-left"></div>
+                <div class="col-sm-4 pull-right odd2"></div>
+            </div>
+            <div class="row selection">
+                <div class="col-sm-8 selection3 pull-left"></div>
+                <div class="col-sm-4 pull-right odd3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
