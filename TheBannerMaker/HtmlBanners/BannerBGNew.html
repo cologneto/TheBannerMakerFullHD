@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/scriptsLanding.js"></script>
+    <style>
+        body {
+            line-height: 1;
+        }
+
+        .row {
+            margin: auto;
+        }
+
+
+
+        #main-container {
+            width: 1073px;
+            height: 320px;
+            /*background-image: url(https://cdn1.efbet.com/efbet/images/1073x320footballBG.jpg);*/
+            /*background-size: cover;*/
+            position: relative;
+            top: 0;
+            left: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+        #efbet {
+            color: #ffdd00;
+            font-size: 14px;
+            position: absolute;
+            top: 280px;
+            left: 0;
+            width: 1073px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .selectionsAndOdds {
+            height: 65px;
+            width: 1073px;
+            background-image: url(../images/YellowFat_02.png);
+        }
+
+        .selectionsAndOdds2 {
+            height: 43px;
+            width: 1073px;
+            background-image: url(../images/YellowFat_02.png);
+        }
+
+        #sportName {
+        }
+
+        #matchName {
+            color: white;
+            font-size: 37px;
+            /*border-bottom: 1px solid;*/
+        }
+
+        .marginTop10 {
+            margin-top: 10px;
+        }
+
+        .marginTop20 {
+            margin-top: 20px;
+        }
+
+        .marginTop16 {
+            margin-top: 16px;
+        }
+
+        .marginTop22 {
+            margin-top: 25px;
+        }
+
+        .marginBottom10 {
+            margin-bottom: 10px;
+        }
+
+        .paddingTop40 {
+            padding-top: 40px;
+        }
+
+        .paddingTop60 {
+            padding-top: 60px;
+        }
+        
+
+        .pull-right, .selection1, .selection2, .selection3, .odd1, .odd2, .odd3 {
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            /* font-size: 3.5vw; */
+            overflow: hidden;
+        }
+
+        .marketText {
+            position: relative;
+            top: 10px;
+            color: white;
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+            .marketText span {
+                border-top: 2px solid #fddc00;
+                border-left: 2px solid #fddc00;
+                border-right: 2px solid #fddc00;
+                /*border-bottom: 3px solid #fddc00;*/
+                padding: 0 30px 0 30px;
+                font-size: 25px;
+                background-color: black;
+            }
+
+        #background {
+            background-image: url(../images/topOdds.jpg);
+            height: 320px;
+            width: 1073px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        /*.hide {
+                display: none;
+            }*/
+        .noPadding {
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body onload="ajaxCall2()">
+    <div id="background" class="">
+
+    </div>
+    <div id="main-container" style="display: none;">
+
+        <div class="row text-center" id="matchName">
+            Уест Бромич Албиън - Манчестър Юнайтед
+        </div>
+        <div class="row">
+            <div id="marketName" class="noPadding">
+
+                <div class="marketText text-center">
+
+                    <span>Играч от кой отбор ще спука топката?</span>
+
+                </div>
+
+            </div>
+            <div class="regularMarket" style="display: none;">
+                <div class="selectionsAndOdds">
+                    <div class="col-lg-6 text-center">
+                        <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="45" style="margin-top:18px;margin-left: 10px;" />
+                        <div class="selection1 pull-left marginTop22">Уест Бромич Албиън</div>
+                        <div class="odd1 pull-right marginTop22">8.00</div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
+                        <div class="selection3 pull-left marginTop22">Манчестър Юнайтед</div>
+                        <div class="odd3 pull-right marginTop22">2.10</div>
+                    </div>
+
+                </div>
+                <div class="selectionsAndOdds">
+                    <div class="col-lg-6 text-center">
+                        <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="45" style="margin-top:18px;margin-left: 10px;" />
+                        <div class="selection1 pull-left marginTop22">Уест Бромич Албиън</div>
+                        <div class="odd1 pull-right marginTop22">8.00</div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
+                        <div class="selection3 pull-left marginTop22">Манчестър Юнайтед</div>
+                        <div class="odd3 pull-right marginTop22">2.10</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="moreSelectionsMarket">
+                <div class="selectionsAndOdds2">
+                    <div class="col-lg-6 text-center">
+                        <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="22" style="margin-top:18px;margin-left: 10px;" />
+                        <div class="selection1 pull-left marginTop16">Уест Бромич Албиън</div>
+                        <div class="odd1 pull-right marginTop16">8.00</div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
+                        <div class="selection3 pull-left marginTop16">Манчестър Юнайтед</div>
+                        <div class="odd3 pull-right marginTop16">2.10</div>
+                    </div>
+
+                </div>
+                <div class="selectionsAndOdds2">
+                    <div class="col-lg-6 text-center">
+                        <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="22" style="margin-top:18px;margin-left: 10px;" />
+                        <div class="selection1 pull-left marginTop16">Уест Бромич Албиън</div>
+                        <div class="odd1 pull-right marginTop16">8.00</div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
+                        <div class="selection3 pull-left marginTop16">Манчестър Юнайтед</div>
+                        <div class="odd3 pull-right marginTop16">2.10</div>
+                    </div>
+
+                </div>
+                <div class="selectionsAndOdds2">
+                    <div class="col-lg-6 text-center">
+                        <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="22" style="margin-top:18px;margin-left: 10px;" />
+                        <div class="selection1 pull-left marginTop16">Уест Бромич Албиън</div>
+                        <div class="odd1 pull-right marginTop16">8.00</div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
+                        <div class="selection3 pull-left marginTop16">Манчестър Юнайтед</div>
+                        <div class="odd3 pull-right marginTop16">2.10</div>
+                    </div>
+
+                </div>
+                <div class="selectionsAndOdds2">
+                    <div class="col-lg-6 text-center">
+                        <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="22" style="margin-top:18px;margin-left: 10px;" />
+                        <div class="selection1 pull-left marginTop16">Уест Бромич Албиън</div>
+                        <div class="odd1 pull-right marginTop16">8.00</div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
+                        <div class="selection3 pull-left marginTop16">Манчестър Юнайтед</div>
+                        <div class="odd3 pull-right marginTop16">2.10</div>
+                    </div>
+
+                </div>
+                <div class="selectionsAndOdds2">
+                    <div class="col-lg-6 text-center">
+                        <img src="..\images\right_03_03.png" alt="Right" class="pull-right" height="22" style="margin-top:18px;margin-left: 10px;" />
+                        <div class="selection1 pull-left marginTop16">Уест Бромич Албиън</div>
+                        <div class="odd1 pull-right marginTop16">8.00</div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <!--<img src="..\images\right_03_03.png" alt="Right" class="pull-left" height="220" style="margin-top:28px;" />-->
+                        <div class="selection3 pull-left marginTop16">Манчестър Юнайтед</div>
+                        <div class="odd3 pull-right marginTop16">2.10</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+    <div class="row text-center" id="efbet" style="display: none;">
+        <div class="col-md-3"></div>
+        <div class="topOdds col-md-6">
+            <img src="http://maintenance.efbet.com/banner/CupBanners/images/EfbetLogo.png" alt="" width="120" class="marginBottom10" />
+            <span>ТОП КОЕФИЦИЕНТИ</span>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</body>
+</html>

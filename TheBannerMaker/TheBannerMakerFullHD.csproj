@@ -162,16 +162,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HtmlBanners\160x600.html" />
+    <Content Include="HtmlBanners\160x600TR.html" />
     <Content Include="HtmlBanners\250x250.html" />
+    <Content Include="HtmlBanners\300x250.html" />
+    <Content Include="HtmlBanners\300x250TR.html" />
     <Content Include="HtmlBanners\300x300.html" />
     <Content Include="HtmlBanners\300x600.html" />
+    <Content Include="HtmlBanners\300x600TR.html" />
     <Content Include="HtmlBanners\463x300.html" />
     <Content Include="HtmlBanners\600x275.html" />
     <Content Include="HtmlBanners\640x100.html" />
+    <Content Include="HtmlBanners\728x90.html" />
+    <Content Include="HtmlBanners\728x90TR.html" />
     <Content Include="HtmlBanners\980x110.html" />
     <Content Include="HtmlBanners\980x200.html" />
+    <Content Include="HtmlBanners\BannerBG.html" />
+    <Content Include="HtmlBanners\BannerBGNew.html" />
     <Content Include="HtmlBanners\BannerFullHDSingleMarketUK.html" />
     <Content Include="HtmlBanners\BannerFullHDSingleMarket.html" />
+    <Content Include="HtmlBanners\BannerSQ.html" />
+    <Content Include="HtmlBanners\BannerTR.html" />
+    <Content Include="HtmlBanners\BannerUK.html" />
     <Content Include="HtmlBanners\DinamycBanner250x250.html" />
     <Content Include="HtmlBanners\LiveMarketsAll.html" />
     <Content Include="HtmlBanners\TestCORS.html" />
@@ -218,6 +230,8 @@
     <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\scriptsDynamic.js" />
     <Content Include="Scripts\scripts1.js" />
+    <Content Include="Scripts\scriptsDynamicTR.js" />
+    <Content Include="Scripts\scriptsLanding.js" />
     <Content Include="Scripts\testSchedule.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

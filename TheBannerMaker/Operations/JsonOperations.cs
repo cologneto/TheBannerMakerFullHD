@@ -69,8 +69,14 @@ namespace TheBannerMaker.Operations
             if (counter == 0)
             {
                 date = date.AddDays(1);
+
                 lastDate = lastDate.AddDays(1);
-                matches = matches.Where(dm => dm.MatchDisplayDate < lastDate).ToList();
+                matchesPrematch = ctx.MatchesDatabase
+                                            .Where(dm => dm.MatchDisplayDate >= date && dm.Language == bannerLanguage && dm.IsSpecial != true)
+                                            .OrderBy(x => x.Id)
+                                            .Where(dm => dm.MatchDisplayDate > maxDate)
+                                            .Where(dm => dm.MatchDisplayDate < lastDate);
+                matches.AddRange(matchesPrematch);
             }
 
             var matchesWithSelections = new List<MatchVisualModel>();

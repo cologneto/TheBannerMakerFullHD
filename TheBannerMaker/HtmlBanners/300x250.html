@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Efbet Banner</title>
+    <meta charset="utf-8" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 300px;
+            height: 250px;
+            text-transform: uppercase;
+        }
+
+        div {
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .background {
+            background-image: url(../images/300x250.jpg);
+            position: fixed;
+            height: 250px;
+            width: 300px;
+        }
+
+        .container {
+            position: relative;
+            top: 50px;
+            
+            overflow: hidden;
+        }
+
+        .homeTeam, .awayTeam, .dd {
+            color: white;
+            font-size: 20px;
+        }
+
+        .marketName, .selection {
+            color: black;
+            font-size: 14px;
+            background-color: #ffdd00;
+            font-weight: bold;
+            margin: 5px 0 5px 0;
+        }
+
+        .marketName {
+            margin-bottom: 15px;
+        }
+
+        .selection {
+            width: 300px;
+            margin-left: -15px;
+        }
+
+        .nopadding {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .vs {
+            font-size: 10px;
+            position: absolute;
+            color: white;
+            top: 71px;
+            left: 146px;
+        }
+    </style>
+    <script src="../Scripts/scriptsDynamic.js"></script>
+</head>
+
+<body onload="ajaxCall2()">
+    <div class="background"></div>
+    <div class="vs">-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 homeTeam text-center"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 awayTeam text-center"></div>
+        </div>
+
+        <div class="marketWrapper">
+            <div class="row">
+                <div class="marketName text-center">
+
+                </div>
+            </div>
+
+            <div class="row selection">
+                <div class="col-sm-8 selection1 pull-left"></div>
+                <div class="col-sm-4 pull-right odd1"></div>
+            </div>
+            <div class="row selection">
+                <div class="col-sm-8 selection2 pull-left"></div>
+                <div class="col-sm-4 pull-right odd2"></div>
+            </div>
+            <div class="row selection">
+                <div class="col-sm-8 selection3 pull-left"></div>
+                <div class="col-sm-4 pull-right odd3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -80,3 +80,19 @@ The remote server returned an error: (421) Service not available, closing contro
 The remote server returned an error: (421) Service not available, closing control connection. - 6/18/2016 8:59:02 PM
 Unable to connect to the remote server - 6/22/2016 1:25:05 AM
 Unable to connect to the remote server - 6/22/2016 1:25:26 AM
+Unable to connect to the remote server - 6/24/2016 12:41:21 AM
+Unable to connect to the remote server - 6/24/2016 12:41:42 AM
+Unable to connect to the remote server - 6/25/2016 1:49:36 AM
+Unable to connect to the remote server - 6/25/2016 1:49:57 AM
+Unable to connect to the remote server - 6/25/2016 1:50:18 AM
+Unable to connect to the remote server - 6/25/2016 1:54:52 AM
+Unable to connect to the remote server - 6/25/2016 1:55:13 AM
+Unable to connect to the remote server - 6/25/2016 1:55:34 AM
+The remote server returned an error: 227 Entering Passive Mode (195,64,160,20,9,221)
+. - 7/1/2016 1:35:52 AM
+The operation has timed out. - 7/3/2016 5:34:33 PM
+Unable to connect to the remote server - 7/3/2016 5:35:16 PM
+Unable to connect to the remote server - 7/3/2016 5:35:37 PM
+The remote server returned an error: (421) Service not available, closing control connection. - 7/3/2016 5:38:51 PM
+Unable to connect to the remote server - 7/3/2016 5:39:33 PM
+System error. - 7/3/2016 5:41:13 PM

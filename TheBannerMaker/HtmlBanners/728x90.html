@@ -24,7 +24,7 @@
         }
 
         .background {
-            background-image: url(../images/980x200background.jpg);
+            background-image: url(../images/728x90.jpg);
             position: fixed;
             width: 728px;
             height: 90px;
@@ -37,7 +37,7 @@
 
         .homeTeam, .awayTeam, .dd {
             color: white;
-            font-size: 20px;
+            font-size: 14px;
             font-weight: bold;
         }
 
@@ -51,19 +51,20 @@
 
         .marketName, .selection {
             color: black;
-            font-size: 16px;
+            font-size: 14px;
             background-color: #ffdd00;
             font-weight: bold;
             margin: 1px 0 0 0;
         }
 
         .marketName {
-            margin-top: 5px;
+            margin-top: 3px;
+            width: 360.66px;
         }
 
 
         .selection {
-            width: 326.66px;
+            width: 360.66px;
             margin-left: -15px;
         }
 
@@ -78,24 +79,22 @@
 <body onload="ajaxCall2()">
     <div class="background"></div>
     <div class="container">
-        <div class="row" style="height: 100px;">
-           
-        </div>
         <div class="row">
-            <div class="col-md-8">
+
+            <div class="col-xs-6">
                 <
                 <!--div class="row text-center">
-            <img src="" class="cupLogo" width="70" height="40" alt="" />
-        </div>-->
-                <div class="row" style="padding-top:15px;">
-                    <div class="col-sm-5 homeTeam text-right"></div>
-                    <div class="col-sm-2 dd text-center">-</div>
-                    <div class="col-sm-5 awayTeam text-left"></div>
+                    <img src="" class="cupLogo" width="70" height="40" alt="" />
+                </div>-->
+                <div class="row" style="padding-top:35px;">
+                    <div class="col-xs-5 homeTeam text-right"></div>
+                    <div class="col-xs-2 dd text-center">-</div>
+                    <div class="col-xs-5 awayTeam text-left"></div>
 
                 </div>
 
             </div>
-            <div class="col-md-4">
+            <div class="col-xs-6">
                 <div class="marketWrapper">
                     <div class="row">
                         <div class="marketName text-center">
@@ -104,20 +103,22 @@
                     </div>
 
                     <div class="row selection">
-                        <div class="col-sm-8 selection1 pull-left"></div>
-                        <div class="col-sm-4 pull-right odd1"></div>
+                        <div class="col-xs-8 selection1 pull-left"></div>
+                        <div class="col-xs-4 pull-right text-right odd1 "></div>
                     </div>
                     <div class="row selection">
-                        <div class="col-sm-8 selection2 pull-left"></div>
-                        <div class="col-sm-4 pull-right odd2"></div>
+                        <div class="col-xs-8 selection2 pull-left"></div>
+                        <div class="col-xs-4 pull-right text-right odd2"></div>
                     </div>
                     <div class="row selection">
-                        <div class="col-sm-8 selection3 pull-left"></div>
-                        <div class="col-sm-4 pull-right odd3"></div>
+                        <div class="col-xs-8 selection3 pull-left"></div>
+                        <div class="col-xs-4 pull-right text-right odd3"></div>
                     </div>
                 </div>
             </div>
+
         </div>
+
 
     </div>
 </body>

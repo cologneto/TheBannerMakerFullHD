@@ -1,4 +1,5 @@
-﻿
+﻿var tennisDailyMatches = [];
+var tennisCounter = 0;
 var dailyMatches = [];
 var homeFlag = $('.homeFlag img');
 var awayFlag = $('.awayFlag img');
@@ -9,12 +10,16 @@ var threeWay = $('.oneMarket');
 var twoWay = $('.doubleMarkets');
 var twelveWay = $('.goalscorer');
 var fourWay = $('.tripleMarkets');
+var tennis = $('.tennis').find('.row');
 var counterDailyMatches = 0;
 var counterSlides = 0;
 var slideShow = $('.slideshow');
 var currTwelveCounter = 0;
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var currentNumber = 0;
+var isTennis = true;
 
-try {
+
     function changeLongName(name) {
         if (name == "Северна Ирландия") {
             return "С. Ирландия"
@@ -23,7 +28,7 @@ try {
             return name;
         }
     }
-
+    // On load function get JSON
     function startUK() {
 
         $.getJSON("../Json/testUK.json", function (json) {
@@ -36,11 +41,19 @@ try {
                     continue;
                 }
                 else {
-
-                    dailyMatches.push($.grep(json, function (n, i) {
-                        return (n.MatchId === json[dmi].MatchId);
-                    }));
-                    currentMatchId = json[dmi].MatchId;
+                    if (json[dmi].Sport == "Тенис" && isTennis) {
+                        tennisDailyMatches.push($.grep(json, function (n, i) {
+                            return (n.Sport === json[dmi].Sport);
+                        }));
+                        isTennis == false;
+                    }
+                    else {
+                        dailyMatches.push($.grep(json, function (n, i) {
+                            return (n.MatchId === json[dmi].MatchId);
+                        }));
+                        currentMatchId = json[dmi].MatchId;
+                    }
+                   
                 }
 
             }
@@ -63,11 +76,18 @@ try {
                     continue;
                 }
                 else {
+                    if (json[dmi].Sport == "Тенис") {
+                        tennisDailyMatches.push($.grep(json, function (n, i) {
+                            return (n.MatchId === json[dmi].MatchId);
+                        }));
+                    }
+                    else {
+                        dailyMatches.push($.grep(json, function (n, i) {
+                            return (n.MatchId === json[dmi].MatchId);
+                        }));
+                        currentMatchId = json[dmi].MatchId;
+                    }
 
-                    dailyMatches.push($.grep(json, function (n, i) {
-                        return (n.MatchId === json[dmi].MatchId);
-                    }));
-                    currentMatchId = json[dmi].MatchId;
                 }
 
             }
@@ -402,6 +422,21 @@ try {
         });
 
 
+        if (tennisDailyMatches.length !=0) {
+            console.log(tennisDailyMatches);
+            tennis.find('.selection1').text(tennisDailyMatches[tennisCounter][0].Selections[0].SelectionName);
+            tennis.find('.odd1').text(tennisDailyMatches[tennisCounter][0].Selections[0].SelectionValue.toFixed(2));
+            tennis.find('.selection3').text(tennisDailyMatches[tennisCounter][0].Selections[1].SelectionName);
+            tennis.find('.odd3').text(tennisDailyMatches[tennisCounter][0].Selections[1].SelectionValue.toFixed(2));
+            tennisCounter++;
+
+            if (tennisCounter >= tennisDailyMatches.length) {
+                tennisCounter = 0;
+            }
+        }
+        
+
+
     }
 
     function changeSlides(index) {
@@ -413,7 +448,20 @@ try {
         $('.slideshow .slide:first-child').show(); // show first slide
         setInterval(function () {
             counterSlides++;
-            if (counterSlides === 7) {
+
+            //randomly choose casino image for the last slide
+            //if (counterSlides === 3) {
+            //     var m = Math.floor(Math.random() * arr.length);
+            //     while (currentNumber == m) {
+            //         m = Math.floor(Math.random() * arr.length);
+                    
+            //     }
+            //     $('.casinoImage > img').attr("src", "../images/casino" + arr[m] +".jpg");
+            //     currentNumber = m;
+           
+            //}
+            
+            if (counterSlides === 18) {
                 counterDailyMatches++;
 
                 counterSlides = 0;
@@ -451,14 +499,9 @@ try {
     }
     //asldcjal();
 
-} catch (e) {
 
-    setTimeout(function () {
-        console.log();
-        console.log(e.message);
-        location.reload(true);
-    }, 60000);
-}
+
+
 
 
 
