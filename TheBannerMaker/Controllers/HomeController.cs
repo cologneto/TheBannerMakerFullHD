@@ -16,11 +16,6 @@ namespace TheBannerMaker.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var sportsList = new List<SelectListItem>(); 
-            sportsList.Add(new SelectListItem { Value = "Basketball", Text = "Баскетбол" });
-            sportsList.Add(new SelectListItem { Value = "FOOTBALL", Text = "Футбол" });
-            sportsList.Add(new SelectListItem { Value = "Tennis", Text = "Тенис" });
-            sportsList.Add(new SelectListItem { Value = "VOLLEY", Text = "Волейбол" });
             
             var languagesList = new List<SelectListItem>();
             languagesList.Add(new SelectListItem { Value = "0", Text = "Български" });
@@ -28,10 +23,26 @@ namespace TheBannerMaker.Controllers
             languagesList.Add(new SelectListItem { Value = "2", Text = "Турски" });
             languagesList.Add(new SelectListItem { Value = "3", Text = "Албански" });
             
-            ViewData["sports"] = sportsList;
+            
             ViewData["languages"] = languagesList;
 
             return View();
+        }
+
+         public ActionResult SportList()
+        {
+            IQueryable sports = Sport.GetSports();
+
+            if (HttpContext.Request.IsAjaxRequest())
+            {
+                return Json(new SelectList(
+                    sports,
+                    "SportId",
+                    "SportName"), JsonRequestBehavior.AllowGet
+                    );
+            }
+
+            return View(sports);
         }
 
 

@@ -22,7 +22,7 @@
         <div class="form-group">
             @Html.Label("Select Sport", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4">
-                @Html.DropDownList("Sport", ViewData["sports"] as List<SelectListItem>, "Please select sport.", new { @class = "form-control", @id = "sports" })
+                @Html.DropDownList("Sport", new SelectList(string.Empty, "Value", "Text"), "Please select a sport", new { @class = "form-control", @id = "sports" })
 
             </div>
 

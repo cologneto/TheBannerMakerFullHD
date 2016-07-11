@@ -9,11 +9,11 @@ var currGlobalIndex = 0;
 
 function changeBackgroundPics(arrayOfPics, matchName, currentMatchName, currentIndex) {
     if (matchName == currentMatchName) {
-        currGlobalIndex = currentIndex
+        currGlobalIndex = currentIndex;
         return arrayOfPics[currGlobalIndex];
     }
     else {
-        currGlobalIndex = Math.abs(currentIndex - 1)
+        currGlobalIndex = Math.abs(currentIndex - 1);
         return arrayOfPics[currGlobalIndex];
     }
 }
@@ -33,18 +33,31 @@ function changingSlidesAll() {
 
 
     function changeSlides() {
-        
+        main.css('cursor', 'pointer');
         main.hide();
         matchNameContainer.text(dailyMatches[counter].MatchName)
         sportMarketContainer.text(dailyMatches[counter].Market)
-        
+        var language = dailyMatches[counter].Language;
 
         //==========================
         //show starting background
         //==========================
         if (counter == 0 && isStarting) {
             isStarting = false;
-            background.css('background-image', 'url(../images/topOdds.jpg)');
+
+            if (language == "BG") {
+                background.css('background-image', 'url(../images/topOdds.jpg)');
+            }
+            if (language == "UK") {
+                background.css('background-image', 'url(../images/topOddsUK.jpg)');
+            }
+            if (language == "TR") {
+                background.css('background-image', 'url(../images/topOddsTR.jpg)');
+            }
+            if (language == "SQ") {
+                background.css('background-image', 'url(../images/topOddsSQ.jpg)');
+            }
+            
             main.hide();
             $('#efbet').hide();
         }
@@ -231,24 +244,23 @@ function ajaxCall2() {
 
 function ajaxCall2UK() {
     $.getJSON("../Json/testUK.json", function (json) {
-        addInplayMarketsToJSON(json);
-        dailyMatches = addInplayMarketsToJSON(json);
+        dailyMatches = json;
     });
     changingSlidesAll();
 };
 
 function ajaxCall2TR() {
     $.getJSON("../Json/testTR.json", function (json) {
-        addInplayMarketsToJSON(json);
-        dailyMatches = addInplayMarketsToJSON(json);
+        
+        dailyMatches = json;
     });
     changingSlidesAll();
 };
 
 function ajaxCall2SQ() {
     $.getJSON("../Json/testSQ.json", function (json) {
-        addInplayMarketsToJSON(json);
-        dailyMatches = addInplayMarketsToJSON(json);
+        
+        dailyMatches = json;
     });
     changingSlidesAll();
 };

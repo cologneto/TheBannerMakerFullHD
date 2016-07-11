@@ -28,10 +28,11 @@ namespace TheBannerMaker.ScheduleJobs
                 var path = ConfigurationManager.AppSettings["MappedPath"] + "Json\\testBG.json";
                 var pathUK = ConfigurationManager.AppSettings["MappedPath"] + "Json\\testUK.json";
                 var pathTR = ConfigurationManager.AppSettings["MappedPath"] + "Json\\testTR.json";
+                var pathSQ = ConfigurationManager.AppSettings["MappedPath"] + "Json\\testSQ.json";
 
-                Operations.JsonOperations.UploadFileToFTPServer(path);
-                Operations.JsonOperations.UploadFileToFTPServer(pathUK);
-                Operations.JsonOperations.UploadFileToFTPServer(pathTR);
+                //Operations.JsonOperations.UploadFileToFTPServer(path);
+                //Operations.JsonOperations.UploadFileToFTPServer(pathUK);
+                //Operations.JsonOperations.UploadFileToFTPServer(pathTR);
                 //Operations.JsonOperations.UploadFileToFTPServer(pathSQ);
                 UpdateOperations.DeleteOldMatches();
                 JsonOperations.WriteDataToJsonFile();

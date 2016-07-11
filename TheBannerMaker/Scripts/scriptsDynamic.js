@@ -15,7 +15,7 @@ function changeLongName(name) {
 
 function changingSlidesAll() {
     var counter = 0;
-   
+    var isStarting = false;
     var home = $(".selection1");
     var draw = $(".selection2");
     var away = $(".selection3");
@@ -26,14 +26,16 @@ function changingSlidesAll() {
     var homeTeam = $('.homeTeam');
     var awayTeam = $('.awayTeam');
     var cupLogo = $('.cupLogo');
+    var bonus = $('.bonus');
 
     function changeSlides() {
-       
-        if (dailyMatches[counter].IsInplay) {
-            cupLogo.attr('src', '..//images//dynamicLogo.png');
+        bonus.show();
+        if (counter == 0 && isStarting) {
+            //cupLogo.attr('src', '..//images//dynamicLogo.png');
+            bonus.show();
         }
         else {
-            cupLogo.attr('src', '..//images//home-marquee-logo-_x200_02.png');
+            //cupLogo.attr('src', '..//images//home-marquee-logo-_x200_02.png');
         }
             if (dailyMatches[counter].Selections.length == 0) {
                 counter++;
@@ -41,10 +43,12 @@ function changingSlidesAll() {
                     counter++;
                 }
             }
+           
+            
             if (dailyMatches[counter].Selections.length == 2 || dailyMatches[counter].Selections.length == 4) {
                 draw.hide();
                 oddDraw.hide();
-               
+                bonus.hide();
                 marketName.text(dailyMatches[counter].Market);
                 //matchNameContainer.text(dailyMatches[counter].MatchName);
                 //sportMarketContainer.text(dailyMatches[counter].Market);
@@ -52,11 +56,9 @@ function changingSlidesAll() {
                 away.text(changeLongName(dailyMatches[counter].Selections[1].SelectionName));
                 oddHome.text(dailyMatches[counter].Selections[0].SelectionValue.toFixed(2));
                 oddAway.text(dailyMatches[counter].Selections[1].SelectionValue.toFixed(2));
-                
-               
             }
             else if (dailyMatches[counter].Selections.length == 3) {
-
+                bonus.hide();
                 if (dailyMatches[counter].Market == 'Краен изход') {
                     homeTeam.text(changeLongName(dailyMatches[counter].Selections[0].SelectionName));
                     awayTeam.text(changeLongName(dailyMatches[counter].Selections[2].SelectionName));
@@ -86,16 +88,7 @@ function changingSlidesAll() {
         
         //asdfasdf
     };
-    //$('.background').each(function () {
-    //    $(this).click(function (e) {
-    //        if (!dailyMatches[counter-1].IsInplayNow) {
-    //            window.open("https://www.efbet.com/" + dailyMatches[counter - 1].Language + "/541/sports#action=market-group-list&event=" + dailyMatches[counter-1].MatchId);
-    //        }
-    //        else {
-    //            window.open("https://www.efbet.com/" + dailyMatches[counter - 1].Language + "/541/inplay#idfoevent=" + dailyMatches[counter-1].MatchId + "&idfosporttype=" + changeSportsForInplay(dailyMatches[counter-1].Sport));
-    //        }
-    //    })
-    //});
+   
     setInterval(changeSlides, 3400);
 }
 

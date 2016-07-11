@@ -5,6 +5,8 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
+using System.Text;
 using System.Web;
 using TheBannerMaker.Data;
 using TheBannerMaker.Models;
@@ -113,8 +115,36 @@ namespace TheBannerMaker.Operations
             {
                 var list = GetDailyMatches(item);
                 string json = JsonConvert.SerializeObject(list, Formatting.Indented);
-                System.IO.File.WriteAllText(ConfigurationManager.AppSettings["MappedPath"] + "\\Json\\test" + item + ".json", json);
+                try
+                {
+                    System.IO.File.WriteAllText(ConfigurationManager.AppSettings["MappedPath"] + "\\Json\\test" + item + ".json", json);
+                }
+                catch (Exception x)
+                {
+
+                    CreateTestMessage2();
+                    throw x;
+                }
             }
+
+        }
+
+        public static void CreateTestMessage2()
+        {
+            SmtpClient client = new SmtpClient();
+            client.Port = 587;
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true;
+            client.Timeout = 10000;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential("ithelp.efbet@gmail.com", "12efbet34Online");
+
+            MailMessage mm = new MailMessage("ithelp.efbet@gmail.com", "ithelp@efbet.com", "Problem with The Banner Maker App - " + DateTime.Now, "Stop the aplication and relaunch it again!!!!!");
+            mm.BodyEncoding = UTF8Encoding.UTF8;
+            mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+
+            client.Send(mm);
 
         }
 

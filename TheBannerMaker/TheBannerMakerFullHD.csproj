@@ -179,12 +179,20 @@
     <Content Include="HtmlBanners\980x200.html" />
     <Content Include="HtmlBanners\BannerBG.html" />
     <Content Include="HtmlBanners\BannerBGNew.html" />
+    <Content Include="HtmlBanners\BannerFullHDNewUK.html" />
+    <Content Include="HtmlBanners\BannerFullHDNewTR.html" />
+    <Content Include="HtmlBanners\BannerFullHDNewSQ.html" />
+    <Content Include="HtmlBanners\BannerFullHDNewBG.html" />
     <Content Include="HtmlBanners\BannerFullHDSingleMarketUK.html" />
     <Content Include="HtmlBanners\BannerFullHDSingleMarket.html" />
+    <Content Include="HtmlBanners\BannerNewSQ.html" />
+    <Content Include="HtmlBanners\BannerNewTR.html" />
+    <Content Include="HtmlBanners\BannerNewUK.html" />
     <Content Include="HtmlBanners\BannerSQ.html" />
     <Content Include="HtmlBanners\BannerTR.html" />
     <Content Include="HtmlBanners\BannerUK.html" />
     <Content Include="HtmlBanners\DinamycBanner250x250.html" />
+    <Content Include="HtmlBanners\FacebookPopUp.html" />
     <Content Include="HtmlBanners\LiveMarketsAll.html" />
     <Content Include="HtmlBanners\TestCORS.html" />
     <Content Include="HtmlBanners\GridView.html" />
@@ -231,6 +239,7 @@
     <Content Include="Scripts\scriptsDynamic.js" />
     <Content Include="Scripts\scripts1.js" />
     <Content Include="Scripts\scriptsDynamicTR.js" />
+    <Content Include="Scripts\scriptsFullHDNew.js" />
     <Content Include="Scripts\scriptsLanding.js" />
     <Content Include="Scripts\testSchedule.js" />
     <Content Include="Web.config">
@@ -252,6 +261,7 @@
     <Compile Include="Models\MatchDBModel.cs" />
     <Compile Include="Models\MatchVisualModel.cs" />
     <Compile Include="Models\Selection.cs" />
+    <Compile Include="Models\Sport.cs" />
     <Compile Include="Models\Tournament.cs" />
     <Compile Include="Operations\AllowCrossOrigin.cs" />
     <Compile Include="Operations\JsonOperations.cs" />

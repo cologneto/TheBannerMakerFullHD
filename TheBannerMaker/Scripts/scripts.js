@@ -17,6 +17,27 @@ $(function () {
     $("#sortable").sortable();
     $("#sortable").disableSelection();
     
+    $.getJSON("/Home/SportList",
+       function (data) {
+           var items = "<option>Please select sport</option>";
+           $.each(data, function (i, sport) {
+               if (sport.Text == "Волейбол" || sport.Text == "Футбол" || sport.Text == "Баскетбол" || sport.Text == "Тенис" || sport.Text == "Олимпийски игри") {
+                   items += "<option style=\"color:red; font-size:1.5em; \" value='" + sport.Value + "'>" + sport.Text + "</option>";
+               }
+               else {
+                   items += "<option value='" + sport.Value + "'>" + sport.Text + "</option>";
+               }
+
+           });
+
+           $('#sports').html(items);
+
+       }
+
+   );
+
+
+
     //Sport dropdown change event
     $("#sports").change(function () {
 
