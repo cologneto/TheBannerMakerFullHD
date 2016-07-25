@@ -38,7 +38,7 @@ function changingSlidesAll() {
         matchNameContainer.text(dailyMatches[counter].MatchName)
         sportMarketContainer.text(dailyMatches[counter].Market)
         var language = dailyMatches[counter].Language;
-
+        marketName.show();
         //==========================
         //show starting background
         //==========================
@@ -179,26 +179,61 @@ function changingSlidesAll() {
                 var data = dailyMatches[counter];
                 //data.Selections = data.Selections.splice(10, data.Selections.length - 1);
                 regularMarket.hide();
-                marketName.attr('class', 'noPadding');
+                //marketName.attr('class', 'noPadding');
                 var selectionCounter = 0;
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < data.Selections.length; i++) {
+                    moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).show();
+
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.selection1').text(data.Selections[i].SelectionName);
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.odd1').text(data.Selections[i].SelectionValue.toFixed(2));
                     i++;
+                    if (i == data.Selections.length) {
+                        break;
+                    }
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.selection3').text(data.Selections[i].SelectionName);
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.odd3').text(data.Selections[i].SelectionValue.toFixed(2));
                     selectionCounter++;
+                    if (selectionCounter == 10) {
+                        marketName.attr('class', 'noPadding');
+                        break;
+                    }
                 }
+
+                for (var i = selectionCounter; i <= 5; i++) {
+                    moreSelectionsMarket.children('.selectionsAndOdds2').eq(i).hide();
+                }
+
+                if (dailyMatches[counter].Sport == "Олимпийски игри") {
+                    marketName.hide();
+                }
+
                 moreSelectionsMarket.show();
-                //$('#bootstrap-template')
-                //    .tmpl(data).appendTo('.marketContent');
-                //$.get('../htmlBanners/GridView.html', function (template) {
-                //    $.tmpl(template, data).appendTo('.background2');
-                //});
-                //$('.background').hide();
-                //$('.background2').show();
-                //$('.background2').load("GridView.html");
+
             }
+            //else {
+            //    var data = dailyMatches[counter];
+            //    //data.Selections = data.Selections.splice(10, data.Selections.length - 1);
+            //    regularMarket.hide();
+            //    marketName.attr('class', 'noPadding');
+            //    var selectionCounter = 0;
+            //    for (var i = 0; i < 10; i++) {
+            //        moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.selection1').text(data.Selections[i].SelectionName);
+            //        moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.odd1').text(data.Selections[i].SelectionValue.toFixed(2));
+            //        i++;
+            //        moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.selection3').text(data.Selections[i].SelectionName);
+            //        moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.odd3').text(data.Selections[i].SelectionValue.toFixed(2));
+            //        selectionCounter++;
+            //    }
+            //    moreSelectionsMarket.show();
+            //    //$('#bootstrap-template')
+            //    //    .tmpl(data).appendTo('.marketContent');
+            //    //$.get('../htmlBanners/GridView.html', function (template) {
+            //    //    $.tmpl(template, data).appendTo('.background2');
+            //    //});
+            //    //$('.background').hide();
+            //    //$('.background2').show();
+            //    //$('.background2').load("GridView.html");
+            //}
             if (dailyMatches[counter].Sport == "Футбол") {
                 background.css('background-image', changeBackgroundPics(arratOfFOOTPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
                 currentMatchName = dailyMatches[counter].MatchName;
@@ -213,6 +248,10 @@ function changingSlidesAll() {
             }
             else if (dailyMatches[counter].Sport == "Тенис") {
                 background.css('background-image', changeBackgroundPics(arratOfTENNPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
+                currentMatchName = dailyMatches[counter].MatchName;
+            }
+            else {
+                background.css('background-image', 'url(../images/otherSports.jpg)');
                 currentMatchName = dailyMatches[counter].MatchName;
             }
             counter++;

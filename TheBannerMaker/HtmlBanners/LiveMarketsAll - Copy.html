@@ -24,7 +24,7 @@
                 //==============================
                 //========Place ID here==========
                 //===============================
-                url: "https://www.efbet.com/cache/marketsByEvent/BG/5504793.1.xml",
+                url: "https://www.efbet.com/cache/marketsByEvent/BG/5501482.1.xml",
                 //===============================
                 //=================================
                 //=================================
@@ -85,7 +85,7 @@
 
             //$('.main').append('<div class="time">' + time + '</div>');
 
-            $(xml).find("externaldescription:lt(5)").each(function (index) {
+            $(xml).find("externaldescription").each(function (index) {
                 var marketName = $(this).text();
                 //$('.main').append('<img class="efbetLogo" src="../images/EfbetLogo.png" alt="Efbet" width="400" height="100" />');
                 $('.main').append('<div class="row r' + index + '">' + '<div class="col-md-12 marketName">' + marketName + '</div>');
@@ -107,13 +107,13 @@
                             if (si == 0) {
                                 //homeName = $(this).find('name').text();
                                 //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
-                                
+
                                 //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags() + "-flag-medium.png");
                             }
                             if (si == 2) {
                                 //awayName = $(this).find('name').text();
                                 //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
-                                //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags($(this).find('name').text()) + "-flag-medium.png");
+                                ////$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags($(this).find('name').text()) + "-flag-medium.png");
                             }
                             //switchTeamLogosAndFlags()
                         }
@@ -125,10 +125,11 @@
                     //console.log($('.r' + index).position());
                 });
                 if (selection.length % 2 != 0) {
-                    //get outer height of selection and odd
-                    //var h = $('.r' + index + ' .selection').eq(0).outerHeight(true);
+                    $('.r' + index).append('<div class="col-md-6 selection" style="height: 101px;"></div>');
 
-                    $('.r' + index).append('<div class="col-md-6 selection" style="height:101px;"></div>');
+                    //var h = $('.r' + index + ' .selection').eq(selection.length - 1).outerHeight();
+
+                    //$('.r' + index).append('<div class="col-md-6 selection" style="height:' + h + 'px;"></div>');
                 }
                 $('.main').append('</div>');
 
@@ -147,7 +148,8 @@
             //    })());
             //});
         }
-       
+        //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+        //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
         //====== End parsing xml
         setTimeout(ajaxCall, interval);
         var interval = 2000;
@@ -242,97 +244,97 @@
         //    }
         //};
 
-        //function switchTeamLogosAndFlagsUK(team) {
-        //    switch (team) {
-        //        //Американски отбори
-        //        case "Usa":
-        //            return "american";
-        //        case "Argentina":
-        //            return "argentinian";
-        //        case "Bolivia":
-        //            return "bolivian";
-        //        case "Brazil":
-        //            return "brazilian";
-        //        case "Chile":
-        //            return "chilean";
-        //        case "Colombia":
-        //            return "colombian";
-        //        case "Costa Rica":
-        //            return "costa-rican";
-        //        case "Ecuador":
-        //            return "ecuadorian";
-        //        case "Haiti":
-        //            return "haitian";
-        //        case "Jamaica":
-        //            return "jamaican";
-        //        case "Mexico":
-        //            return "mexican";
-        //        case "Panama":
-        //            return "panamanian";
-        //        case "Paraguay":
-        //            return "paraguayan";
-        //        case "Peru":
-        //            return "peruvian";
-        //        case "Uruguay":
-        //            return "uruguayan";
-        //        case "Venezuela":
-        //            return "venezuelan";
+        function switchTeamLogosAndFlagsUK(team) {
+            switch (team) {
+                //Американски отбори
+                case "Usa":
+                    return "american";
+                case "Argentina":
+                    return "argentinian";
+                case "Bolivia":
+                    return "bolivian";
+                case "Brazil":
+                    return "brazilian";
+                case "Chile":
+                    return "chilean";
+                case "Colombia":
+                    return "colombian";
+                case "Costa Rica":
+                    return "costa-rican";
+                case "Ecuador":
+                    return "ecuadorian";
+                case "Haiti":
+                    return "haitian";
+                case "Jamaica":
+                    return "jamaican";
+                case "Mexico":
+                    return "mexican";
+                case "Panama":
+                    return "panamanian";
+                case "Paraguay":
+                    return "paraguayan";
+                case "Peru":
+                    return "peruvian";
+                case "Uruguay":
+                    return "uruguayan";
+                case "Venezuela":
+                    return "venezuelan";
 
-        //            //Европейски отбори
-        //        case "Albania":
-        //            return "albanian";
-        //        case "Austria":
-        //            return "austrian";
-        //        case "Belgium":
-        //            return "belgian";
-        //        case "Croatia":
-        //            return "croatian";
-        //        case "Czech Republic":
-        //            return "czech";
-        //        case "England":
-        //            return "english";
-        //        case "France":
-        //            return "french";
-        //        case "Germany":
-        //            return "german";
-        //        case "Hungary":
-        //            return "hungarian";
-        //        case "Iceland":
-        //            return "icelander";
-        //        case "Republic of Ireland":
-        //            return "irish";
-        //        case "Italy":
-        //            return "italian";
-        //        case "Northern Ireland":
-        //            return "nirish";
-        //        case "Poland":
-        //            return "polish";
-        //        case "Portugal":
-        //            return "portuguese";
-        //        case "Romania":
-        //            return "romanian";
-        //        case "Russia":
-        //            return "russian";
-        //        case "Slovakia":
-        //            return "slovakian";
-        //        case "Spain":
-        //            return "spanish";
-        //        case "Sweden":
-        //            return "swedish";
-        //        case "Switzerland":
-        //            return "swiss";
-        //        case "Turkey":
-        //            return "turkish";
-        //        case "Ukraine":
-        //            return "ukrainian";
-        //        case "Wales":
-        //            return "wales";
-        //        default:
+                    //Европейски отбори
+                case "Albania":
+                    return "albanian";
+                case "Austria":
+                    return "austrian";
+                case "Belgium":
+                    return "belgian";
+                case "Croatia":
+                    return "croatian";
+                case "Czech Republic":
+                    return "czech";
+                case "England":
+                    return "english";
+                case "France":
+                    return "french";
+                case "Germany":
+                    return "german";
+                case "Hungary":
+                    return "hungarian";
+                case "Iceland":
+                    return "icelander";
+                case "Republic of Ireland":
+                    return "irish";
+                case "Italy":
+                    return "italian";
+                case "Northern Ireland":
+                    return "nirish";
+                case "Poland":
+                    return "polish";
+                case "Portugal":
+                    return "portuguese";
+                case "Romania":
+                    return "romanian";
+                case "Russia":
+                    return "russian";
+                case "Slovakia":
+                    return "slovakian";
+                case "Spain":
+                    return "spanish";
+                case "Sweden":
+                    return "swedish";
+                case "Switzerland":
+                    return "swiss";
+                case "Turkey":
+                    return "turkish";
+                case "Ukraine":
+                    return "ukrainian";
+                case "Wales":
+                    return "wales";
+                default:
 
-        //    }
-        //};
+            }
+        };
 
-        
+
         //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
         //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
     </script>
@@ -340,19 +342,21 @@
     <style type="text/css">
         body {
             overflow: hidden;
-            background-image: url(../images/Background.jpg);
+            background-image: url(../images/BackgroundTV1.jpg);
         }
 
         .odd {
-           color: #ffde33;
+            color: #ffde33;
             font-size: 60px;
             font-weight: normal;
         }
+
         .efbetLogo {
             margin: auto;
             margin-top: 50px;
             margin-bottom: 50px;
         }
+
         .main {
             height: 1080px;
             width: 1920px;
@@ -362,8 +366,8 @@
             color: white;
             margin-left: 20px;
             padding-right: 20px;
-            padding-left:0;
-            overflow-y:scroll;
+            padding-left: 0;
+            overflow-y: scroll;
             /*overflow-y: no-display;*/
             /*padding-right: 20px;*/
         }
@@ -377,13 +381,7 @@
         }*/
 
         .marketName {
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#555555+0,4e4e4e+100 */
-background: #555555; /* Old browsers */
-background: -moz-linear-gradient(top,  #555555 0%, #4e4e4e 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #555555 0%,#4e4e4e 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #555555 0%,#4e4e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#4e4e4e',GradientType=0 ); /* IE6-9 */
-
+            background-color: #4d4d4d;
             font-size: 70px;
             color: white;
             padding: 5px;
@@ -415,9 +413,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', end
 
 
         .row {
-            margin:110px 0 70px 0;
-            background-color: #fddc00;
+            margin: 110px 0 70px 0;
+            
         }
+
         .time {
             font-size: 1.7em;
             color: green;
@@ -441,17 +440,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', end
 
 <body>
     <div id="inplay">НА ЖИВО</div>
-    
-    <div class="col-lg-12" style="padding-top: 15px; z-index:3000; background-color:black;position:fixed;">
-        <div class="col-lg-4 text-center homeFlag">
-            <img src="" alt="Home flag" width="110" height="80" class="pull-right" style="border: 1px solid white;" />
-        </div>
-        <div class="col-lg-4">
+
+    <div class="col-lg-12 text-center" style="padding-top: 15px; z-index:3000; background-color:black;position:fixed;">
+       
+        
             <img src="../images/EfbetLogo.png" alt="Efbet" width="400" height="100" style="margin-left:40px;" />
-        </div>
-        <div class="col-lg-4 text-center awayFlag">
-            <img src="" alt="Away flag" width="110" height="80" class="pull-left" style="border: 1px solid white;"/>
-        </div>
+       
+        
     </div>
     <!--<div style="z-index: 2000;position: fixed;width:100%;font-size:100px;background-color:black; color:white;">EFBET На - Живо </div>-->
     <div class="main container-fluid">

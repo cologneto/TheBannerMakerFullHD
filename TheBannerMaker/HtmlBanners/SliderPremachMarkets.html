@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Xml example</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script>
+        var currentHeight = 0;
+        var homeName = "";
+        var awayName = "";
+        function ajaxCall() {
+
+            $.ajax({
+
+                type: "GET",
+                //==============================
+                //========Place ID here==========
+                //===============================
+                url: "../Json/testBG.json",
+                //===============================
+                //=================================
+                //=================================
+                dataType: "json",
+
+                success: xmlParser,
+
+
+
+                complete: function (data) {
+
+                    // Schedule the next
+
+                    setTimeout(ajaxCall, interval);
+
+
+                }
+
+            });
+
+        };
+        // ==== Add zero to time==
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+        //==================== Scroll ==================================================================
+        window.setInterval(scrollit, 5000);                                                                //======
+        //======
+        function scrollit() {                                                                              //======
+            //console.log(($(".main").scrollTop() + $(".main").innerHeight()));                               //======
+            //console.log($("#main")[0].scrollHeight)                                                        //======
+            //                                                                                 //======
+            if (($(".main").scrollTop() + $(".main").innerHeight()) >= $(".main")[0].scrollHeight)         //======
+                $('.main').animate({ scrollTop: 0 }, 100).delay(900);                                      //======
+            else                                                                                           //======
+                $('.main').animate({ scrollTop: $(".main").scrollTop() + 540 }, 'slow', function () {       //======
+                    //console.log($(".main")[0].scrollHeight)                                                //======
+                });                                                                                        //======
+        }
+
+
+        //======
+        // ================= Scroll End =============================================================
+
+
+        //================== Parsing XML and add html to body ===========================
+
+        function xmlParser(xml) {
+            $('#load').fadeOut();
+            $('.main').html("");
+
+            var dt = new Date();
+
+            var time = addZero(dt.getHours()) + ":" + addZero(dt.getMinutes()) + ":" + addZero(dt.getSeconds());
+
+            //$('.main').append('<div class="time">' + time + '</div>');
+
+            $(xml).each(function (index) {
+                var html = "";
+                var matchName = $(this)[0].MatchName;
+                console.log(matchName);
+                var marketName = $(this)[0].Market;
+                var sport = $(this)[0].Sport;
+                $('.main').append('<div class="row">' + '<div class="col-md-12 matchName" style="font-size:80px;">'+sport + ' - ' + matchName + '</div>');
+                //$('.main').append('<img class="efbetLogo" src="../images/EfbetLogo.png" alt="Efbet" width="400" height="100" />');
+                $('.main').append('<div class="row r' + index + '">' + '<div class="col-md-12 marketName">' + marketName + '</div>');
+                var selection = $(this)[0].Selections;
+                console.log(selection);
+                $(selection).each(function (si) {
+                    
+                    if (selection.length == 2) {
+
+                        $('.r' + index).append('<div class="col-md-6 selection">'
+                            + $(this)[0].SelectionName +
+                       '   ' + '<span class="pull-right odd">'
+                       + $(this)[0].SelectionValue.toFixed(2) + '</span>' + '</div>');
+
+                    }
+
+                    else {
+                        //if (index == 0) {
+                        //    if (si == 0) {
+                        //        homeName = $(this).SelectionName;
+                        //        $('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+                                
+                        //        //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags() + "-flag-medium.png");
+                        //    }
+                        //    if (si == 2) {
+                        //        awayName = $(this).SelectionName;
+                        //        $('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
+                        //        //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags($(this).find('name').text()) + "-flag-medium.png");
+                        //    }
+                        //    switchTeamLogosAndFlags()
+                        //}
+                        if (si === 10) {
+                            return false;
+                        }
+                        $('.r' + index).append('<div class="col-md-6 selection">' + $(this)[0].SelectionName +
+
+                                               '   ' + '<div class="pull-right odd" onchange="console.log(this);">' + $(this)[0].SelectionValue.toFixed(2) + '</div>' + '</div>');
+                        
+                    }
+                    //console.log($('.r' + index).position());
+                   
+                });
+                if (selection.length % 2 != 0) {
+                    //get outer height of selection and odd
+                    var h = $('.r' + index + ' .selection').eq(0).outerHeight(true);
+
+                    $('.r' + index).append('<div class="col-md-6 selection" style="height:' + h + 'px;"></div>');
+                }
+                $('.main').append('</div>');
+
+
+                //if (currentHeight >= "800") {
+
+                //    currentHeight = 0;
+                //    return false;
+                //}
+            });
+
+
+            //$('.odd').each(function () {
+            //    $(this).on("change",(function () {
+            //        console.log("Handler for .change() called.");
+            //    })());
+            //});
+           
+        }
+        $('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+        $('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
+        //====== End parsing xml
+        setTimeout(ajaxCall, interval);
+        var interval = 300000;
+
+        function switchTeamLogosAndFlags(team) {
+            switch (team) {
+                //Американски отбори
+                case "САЩ":
+                    return "american";
+                case "Аржентина":
+                    return "argentinian";
+                case "Боливия":
+                    return "bolivian";
+                case "Бразилия":
+                    return "brazilian";
+                case "Чили":
+                    return "chilean";
+                case "Колумбия":
+                    return "colombian";
+                case "Коста Рика":
+                    return "costa-rican";
+                case "Еквадор":
+                    return "ecuadorian";
+                case "Хаити":
+                    return "haitian";
+                case "Ямайка":
+                    return "jamaican";
+                case "Мексико":
+                    return "mexican";
+                case "Панама":
+                    return "panamanian";
+                case "Парагвай":
+                    return "paraguayan";
+                case "Перу":
+                    return "peruvian";
+                case "Уругвай":
+                    return "uruguayan";
+                case "Венецуела":
+                    return "venezuelan";
+
+                    //Европейски отбори
+                case "Албания":
+                    return "albanian";
+                case "Австрия":
+                    return "austrian";
+                case "Белгия":
+                    return "belgian";
+                case "Хърватска":
+                    return "croatian";
+                case "Чехия":
+                    return "czech";
+                case "Англия":
+                    return "english";
+                case "Франция":
+                    return "french";
+                case "Германия":
+                    return "german";
+                case "Унгария":
+                    return "hungarian";
+                case "Исландия":
+                    return "icelander";
+                case "Ирландия":
+                    return "irish";
+                case "Италия":
+                    return "italian";
+                case "Северна Ирландия":
+                    return "nirish";
+                case "Полша":
+                    return "polish";
+                case "Португалия":
+                    return "portuguese";
+                case "Румъния":
+                    return "romanian";
+                case "Русия":
+                    return "russian";
+                case "Словакия":
+                    return "slovakian";
+                case "Испания":
+                    return "spanish";
+                case "Швеция":
+                    return "swedish";
+                case "Швейцария":
+                    return "swiss";
+                case "Турция":
+                    return "turkish";
+                case "Украйна":
+                    return "ukrainian";
+                case "Уелс":
+                    return "wales";
+                default:
+
+            }
+        };
+
+        function switchTeamLogosAndFlagsUK(team) {
+            switch (team) {
+                //Американски отбори
+                case "Usa":
+                    return "american";
+                case "Argentina":
+                    return "argentinian";
+                case "Bolivia":
+                    return "bolivian";
+                case "Brazil":
+                    return "brazilian";
+                case "Chile":
+                    return "chilean";
+                case "Colombia":
+                    return "colombian";
+                case "Costa Rica":
+                    return "costa-rican";
+                case "Ecuador":
+                    return "ecuadorian";
+                case "Haiti":
+                    return "haitian";
+                case "Jamaica":
+                    return "jamaican";
+                case "Mexico":
+                    return "mexican";
+                case "Panama":
+                    return "panamanian";
+                case "Paraguay":
+                    return "paraguayan";
+                case "Peru":
+                    return "peruvian";
+                case "Uruguay":
+                    return "uruguayan";
+                case "Venezuela":
+                    return "venezuelan";
+
+                    //Европейски отбори
+                case "Albania":
+                    return "albanian";
+                case "Austria":
+                    return "austrian";
+                case "Belgium":
+                    return "belgian";
+                case "Croatia":
+                    return "croatian";
+                case "Czech Republic":
+                    return "czech";
+                case "England":
+                    return "english";
+                case "France":
+                    return "french";
+                case "Germany":
+                    return "german";
+                case "Hungary":
+                    return "hungarian";
+                case "Iceland":
+                    return "icelander";
+                case "Republic of Ireland":
+                    return "irish";
+                case "Italy":
+                    return "italian";
+                case "Northern Ireland":
+                    return "nirish";
+                case "Poland":
+                    return "polish";
+                case "Portugal":
+                    return "portuguese";
+                case "Romania":
+                    return "romanian";
+                case "Russia":
+                    return "russian";
+                case "Slovakia":
+                    return "slovakian";
+                case "Spain":
+                    return "spanish";
+                case "Sweden":
+                    return "swedish";
+                case "Switzerland":
+                    return "swiss";
+                case "Turkey":
+                    return "turkish";
+                case "Ukraine":
+                    return "ukrainian";
+                case "Wales":
+                    return "wales";
+                default:
+
+            }
+        };
+
+        
+        //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+        //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
+    </script>
+
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            background-image: url(../images/Background.jpg);
+        }
+
+        .odd {
+           color: #ffde33;
+            font-size: 60px;
+            font-weight: normal;
+        }
+        .efbetLogo {
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .main {
+            height: 1080px;
+            width: 1920px;
+            max-height: 1080px !important;
+            max-width: 1920px !important;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            color: white;
+            margin-left: 20px;
+            padding-right: 20px;
+            padding-left:0;
+            overflow-y:scroll;
+            /*overflow-y: no-display;*/
+            /*padding-right: 20px;*/
+        }
+
+        /*.marketName {
+            background-color: black;
+            font-size: 92px;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }*/
+
+        .marketName {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#555555+0,4e4e4e+100 */
+background: #555555; /* Old browsers */
+background: -moz-linear-gradient(top,  #555555 0%, #4e4e4e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #555555 0%,#4e4e4e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #555555 0%,#4e4e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#4e4e4e',GradientType=0 ); /* IE6-9 */
+
+            font-size: 70px;
+            color: white;
+            padding: 5px;
+            text-align: left;
+        }
+
+        .selection {
+            background-color: #606060;
+            color: #b2bbb2;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            font-size: 4.5em;
+            font-weight: normal;
+            padding: 5px;
+            border: 1px solid #737373;
+            outline: 2px solid #333333;
+            border-bottom: none;
+            border-left: none;
+        }
+        /*.selection {
+            background-color: #fddc00;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            font-size: 5.5em;
+            color: black;
+            font-weight: bold;
+            padding: 5px;
+            border: 1px solid #5c5c5c;
+            border-bottom:none;
+            border-left: none;
+        }*/
+
+
+        .row {
+            margin:110px 0 70px 0;
+            background-color: #606060;
+        }
+        .time {
+            font-size: 1.7em;
+            color: green;
+        }
+
+        .matchName {
+            background: #262626; /* Old browsers */
+            background: -moz-linear-gradient(top,  #262626 0%, #1d1d1d 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #262626 0%,#1d1d1d 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #262626 0%,#1d1d1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#1d1d1d',GradientType=0 ); /* IE6-9 */
+        }
+
+        #inplay {
+            position: absolute;
+            color: #fcdf05;
+            left: 56px;
+            top: 20px;
+            font-size: 45px;
+            z-index: 4000;
+            font-weight: bold;
+            border: 5px solid #fcdf05;
+            border-radius: 19px;
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    
+    <div class="col-lg-12" style="padding-top: 15px; z-index:3000; background-color:black;position:fixed;">
+        <div class="col-lg-4 text-center homeFlag">
+            
+        </div>
+        <div class="col-lg-4 text-center">
+            <img src="../images/EfbetLogo.png" alt="Efbet" width="400" height="100"  />
+        </div>
+        <div class="col-lg-4 text-center awayFlag">
+            
+        </div>
+    </div>
+    <!--<div style="z-index: 2000;position: fixed;width:100%;font-size:100px;background-color:black; color:white;">EFBET На - Живо </div>-->
+    <div class="main container-fluid">
+
+    </div>
+
+
+
+    <div class="clear"></div>
+
+</body>
+
+</html>
+
+<!-- document.cookie="btag=a_1501b_166c_;path=/;domain=www.efbet.com;" -->

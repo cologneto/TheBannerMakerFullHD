@@ -6,6 +6,7 @@ var arratOfBASKPics = ["url(../images/BasketballFullHDBackground1.jpg)", "url(..
 var arratOfVOLLPics = ["url(../images/VolleyballFullHDBackground1.jpg)", "url(../images/VolleyballFullHDBackground2.jpg)"];
 var arratOfTENNPics = ["url(../images/TennisFullHDBackground2.jpg)", "url(../images/TennisFullHDBackground3.jpg)"];
 var arratOfOLYMPPics = ["url(../images/OlympicFullHDBackground2.jpg)", "url(../images/OlympicFullHDBackground`.jpg)"];
+var arratOfPromoPics = ["url(../images/casino1.jpg)", "url(../images/casino2.jpg)", "url(../images/casino3.jpg)"];
 var currGlobalIndex = 0;
 
 function changeBackgroundPics(arrayOfPics, matchName, currentMatchName, currentIndex) {
@@ -31,38 +32,59 @@ function changingSlidesAll() {
     var moreSelectionsMarket = $('.moreSelectionsMarket');
     var isStarting = false;
     var currentMatchName = "";
+    var promoCounter = 0;
 
 
     function changeSlides() {
         main.css('cursor', 'pointer');
         main.hide();
-        matchNameContainer.text(dailyMatches[counter].MatchName)
-        sportMarketContainer.text(dailyMatches[counter].Market)
+        matchNameContainer.text(dailyMatches[counter].MatchName);
+        sportMarketContainer.text(dailyMatches[counter].Market);
         var language = dailyMatches[counter].Language;
 
         //==========================
         //show starting background
         //==========================
-        if (counter == 0 && isStarting) {
-            isStarting = false;
+        if ((counter == 0 && isStarting) || promoCounter < arratOfPromoPics.length) {
 
-            if (language == "BG") {
-                background.css('background-image', 'url(../images/FullHDBackgroundsTopOdds.jpg)');
+            if (isStarting) {
+                if (language == "BG") {
+                    background.fadeTo('slow', 0.3, function () {
+                        $(this).css('background-image', 'url(../images/FullHDBackgroundsTopOdds.jpg)');
+                    }).fadeTo('slow', 1);
+
+                }
+                else if (language == "UK") {
+                    background.fadeTo('slow', 0.3, function () {
+                        $(this).css('background-image', 'url(../images/FullHDBackgroundsTopOdds.jpg)');
+                    }).fadeTo('slow', 1);
+                    background.css('background-image', 'url(../images/topOddsUK.jpg)');
+                }
+                else if (language == "TR") {
+                    background.css('background-image', 'url(../images/topOddsTR.jpg)');
+                }
+                else if (language == "SQ") {
+                    background.css('background-image', 'url(../images/topOddsSQ.jpg)');
+                }
             }
-            if (language == "UK") {
-                background.css('background-image', 'url(../images/topOddsUK.jpg)');
-            }
-            if (language == "TR") {
-                background.css('background-image', 'url(../images/topOddsTR.jpg)');
-            }
-            if (language == "SQ") {
-                background.css('background-image', 'url(../images/topOddsSQ.jpg)');
+
+
+
+            if (!isStarting) {
+                background.fadeTo('slow', 0.3, function () {
+                    $(this).css('background-image', arratOfPromoPics[promoCounter]);
+                }).fadeTo('slow', 1);
+                promoCounter++;
+                //background.css('background-image', arratOfPromoPics[promoCounter]);
             }
 
             main.hide();
             $('#efbet').hide();
+           
+            isStarting = false;
         }
         else {
+
             if (dailyMatches[counter].Selections.length == 0) {
                 counter++;
                 if (dailyMatches[counter].Selections == 0) {
@@ -156,64 +178,76 @@ function changingSlidesAll() {
                 var data = dailyMatches[counter];
                 //data.Selections = data.Selections.splice(10, data.Selections.length - 1);
                 regularMarket.hide();
-                marketName.attr('class', 'noPadding');
+                //marketName.attr('class', 'noPadding');
                 var selectionCounter = 0;
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < data.Selections.length; i++) {
+                    moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).show();
+
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.selection1').text(data.Selections[i].SelectionName);
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.odd1').text(data.Selections[i].SelectionValue.toFixed(2));
                     i++;
+                    if (i == data.Selections.length) {
+                        break;
+                    }
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.selection3').text(data.Selections[i].SelectionName);
                     moreSelectionsMarket.children('.selectionsAndOdds2').eq(selectionCounter).find('.odd3').text(data.Selections[i].SelectionValue.toFixed(2));
                     selectionCounter++;
+                    if (selectionCounter == 10) {
+                        marketName.attr('class', 'noPadding');
+                        break;
+                    }
                 }
-                marketName.hide();
+
+                for (var i = selectionCounter; i <= 5; i++) {
+                    moreSelectionsMarket.children('.selectionsAndOdds2').eq(i).hide();
+                }
+
+                if (dailyMatches[counter].Sport == "Олимпийски игри") {
+                    marketName.hide();
+                }
+
                 moreSelectionsMarket.show();
-                //$('#bootstrap-template')
-                //    .tmpl(data).appendTo('.marketContent');
-                //$.get('../htmlBanners/GridView.html', function (template) {
-                //    $.tmpl(template, data).appendTo('.background2');
-                //});
-                //$('.background').hide();
-                //$('.background2').show();
-                //$('.background2').load("GridView.html");
+
             }
             if (dailyMatches[counter].Sport == "Футбол") {
-              
+                //background.fadeTo('slow', 0.3, function () {
+                //    $(this).css('background-image', changeBackgroundPics(arratOfFOOTPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
+                //}).fadeTo('slow', 1);
                 background.css('background-image', changeBackgroundPics(arratOfFOOTPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
                 background.fadeIn('slow');
                 currentMatchName = dailyMatches[counter].MatchName;
             }
             else if (dailyMatches[counter].Sport == "Волейбол") {
-               
+
                 background.css('background-image', changeBackgroundPics(arratOfVOLLPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
                 background.fadeIn('slow');
                 currentMatchName = dailyMatches[counter].MatchName;
             }
             else if (dailyMatches[counter].Sport == "Баскетбол") {
-               
+
                 background.css('background-image', changeBackgroundPics(arratOfBASKPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
                 background.fadeIn('slow');
                 currentMatchName = dailyMatches[counter].MatchName;
             }
             else if (dailyMatches[counter].Sport == "Тенис") {
-              
+
                 background.css('background-image', changeBackgroundPics(arratOfTENNPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
                 background.fadeIn('slow');
                 currentMatchName = dailyMatches[counter].MatchName;
             }
             else if (dailyMatches[counter].Sport == "Олимпийски игри") {
-                
+
                 background.css('background-image', changeBackgroundPics(arratOfOLYMPPics, dailyMatches[counter].MatchName, currentMatchName, currGlobalIndex));
                 background.fadeIn('slow');
                 currentMatchName = dailyMatches[counter].MatchName;
             }
             counter++;
-            if (counter >= dailyMatches.length) { counter = 0; isStarting = true; }
+            if (counter >= dailyMatches.length) { counter = 0; isStarting = true; promoCounter = 0; }
         }
-        
-        
+
+
     };
-   
+
     setInterval(changeSlides, 3400);
 }
 

@@ -193,6 +193,9 @@
     <Content Include="HtmlBanners\BannerUK.html" />
     <Content Include="HtmlBanners\DinamycBanner250x250.html" />
     <Content Include="HtmlBanners\FacebookPopUp.html" />
+    <Content Include="HtmlBanners\LiveMarketsAll - Copy.html" />
+    <Content Include="HtmlBanners\SliderPremachMarkets - Copy.html" />
+    <Content Include="HtmlBanners\SliderPremachMarkets.html" />
     <Content Include="HtmlBanners\LiveMarketsAll.html" />
     <Content Include="HtmlBanners\TestCORS.html" />
     <Content Include="HtmlBanners\GridView.html" />

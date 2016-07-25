@@ -32,3 +32,17 @@ Unable to connect to the remote server - 6/29/2016 10:19:10 AM
 Unable to connect to the remote server - 7/1/2016 8:26:54 PM
 Unable to connect to the remote server - 7/2/2016 1:26:11 AM
 The operation has timed out. - 7/2/2016 7:11:40 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:49 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:50 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:51 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:52 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:52 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:53 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:53 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:59 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:00:59 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:01:00 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:01:01 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:01:01 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:01:02 AM
+The remote server returned an error: (503) Server Unavailable. - 7/13/2016 4:01:03 AM

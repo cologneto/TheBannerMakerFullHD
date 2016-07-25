@@ -29,14 +29,14 @@ function changingSlidesAll() {
     var bonus = $('.bonus');
 
     function changeSlides() {
-        bonus.show();
+       
         if (counter == 0 && isStarting) {
             //cupLogo.attr('src', '..//images//dynamicLogo.png');
             bonus.show();
         }
         else {
             //cupLogo.attr('src', '..//images//home-marquee-logo-_x200_02.png');
-        }
+        
             if (dailyMatches[counter].Selections.length == 0) {
                 counter++;
                 if (dailyMatches[counter].Selections == 0) {
@@ -85,7 +85,7 @@ function changingSlidesAll() {
             }
             counter++;
             if (counter >= dailyMatches.length) { counter = 0; isStarting = true; }
-        
+        }
         //asdfasdf
     };
    

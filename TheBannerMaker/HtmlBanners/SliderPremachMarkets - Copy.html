@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Xml example</title>
+    <script>
+
+        setTimeout(function () {
+            console.log("asdasdasd");
+
+            location.reload(true);
+        }, 1000);
+
+    </script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script>
+        var currentHeight = 0;
+        var homeName = "";
+        var awayName = "";
+        function ajaxCall() {
+
+            $.ajax({
+
+                type: "GET",
+                //==============================
+                //========Place ID here==========
+                //===============================
+                url: "../Json/testBG.json",
+                //===============================
+                //=================================
+                //=================================
+                dataType: "json",
+
+                success: xmlParser,
+
+
+
+                complete: function (data) {
+
+                    changeSlides();
+
+                }
+
+            });
+
+        };
+        // ==== Add zero to time==
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+        
+        function changeSlides() {
+            $('.logo').hide();
+            $('.main .slide').hide(); // hide all slides
+            $('.main .slide:first-child').css('margin-top', (1080 - $('.main .slide:first-child').outerHeight()) / 2 + 'px').show(); // show first slide
+            setInterval(function () {
+                
+                $('.main .slide:first-child').hide()
+                      .next('.slide').css('margin-top', (1080 - $('.main .slide:first-child').next().outerHeight()) / 2 + 'px').fadeIn(1000)
+                      .end().appendTo('.main')
+                if ($('.main .slide:first-child').hasClass('casino')) {
+                    $('.logo').hide();
+                    $('body').css('background-image', 'none');
+                }
+                else {
+                    //$('.logo').show();
+                    $('body').css('background-image', 'url(../images/Background.jpg)');
+                }
+            }, 7000);
+
+        }
+
+        //======
+        // ================= Scroll End =============================================================
+
+
+        //================== Parsing XML and add html to body ===========================
+
+        function xmlParser(xml) {
+            $('#load').fadeOut();
+            $('.main').append('<div class="slide casino" style="position:fixed;top:0;left:0;height:1080px;">' + '<img src="../images/FullHDBackgroundsTopOdds.jpg" alt="Alternate Text" />' + '</div>');
+            $('.main').append('<div class="slide casino" style="position:fixed;top:0;left:0;height:1080px;">' + '<img src="../images/casino2.jpg" alt="Alternate Text" />' + '</div>');
+            $('.main').append('<div class="slide casino" style="position:fixed;top:0;left:0;height:1080px;">' + '<img src="../images/casino3.jpg" alt="Alternate Text" />' + '</div>');
+
+            var dt = new Date();
+
+            var time = addZero(dt.getHours()) + ":" + addZero(dt.getMinutes()) + ":" + addZero(dt.getSeconds());
+
+            $(xml).each(function (index) {
+                var html = "";
+                var matchName = $(this)[0].MatchName;
+                console.log(matchName);
+                var marketName = $(this)[0].Market;
+                var sport = $(this)[0].Sport;
+                //html += +sport + '<br> '
+                html += '<div class="slide"><div class="row">' + '<div class="col-md-12 matchName" style="font-size:80px;">' + matchName + '</div>';
+                html += '<div class="row r' + index + '">' + '<div class="col-md-12 marketName">' + marketName + '</div></div></div>';
+                $('.main').append(html);
+                var selection = $(this)[0].Selections;
+                if (marketName == "Брой Голове 2,5") {
+
+                    selection.pop();
+                    selection.pop();
+                    console.log(selection);
+
+                }
+                
+                $(selection).each(function (si) {
+                
+                    if (selection.length == 2) {
+
+                        $('.r' + index).append('<div class="col-md-6 selection">'
+                            + $(this)[0].SelectionName +
+                       '   ' + '<span class="pull-right odd">'
+                       + $(this)[0].SelectionValue.toFixed(2) + '</span>' + '</div>');
+
+                    }
+
+                    else {
+                        
+                        if (si === 10) {
+                            return false;
+                        }
+                        $('.r' + index).append('<div class="col-md-6 selection">' + $(this)[0].SelectionName +
+
+                                               '   ' + '<div class="pull-right odd" onchange="console.log(this);">' + $(this)[0].SelectionValue.toFixed(2) + '</div>' + '</div>');
+                        
+                    }
+                   
+                   
+                });
+            });
+
+        }
+       
+        //====== End parsing xml
+        
+        ajaxCall();
+
+        //$('.homeFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(homeName) + "-flag-medium.png");
+        //$('.awayFlag > img').attr("src", "..\\FlagsEurope\\" + switchTeamLogosAndFlags(awayName) + "-flag-medium.png");
+    </script>
+
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            background-image: url(../images/Background.jpg);
+        }
+
+        .odd {
+           color: #ffde33;
+            font-size: 70px;
+            font-weight: normal;
+        }
+        .efbetLogo {
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .main {
+            height: 1080px;
+            width: 1920px;
+            max-height: 1080px !important;
+            max-width: 1920px !important;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            color: white;
+            margin-left: 20px;
+            padding-right: 20px;
+            padding-left:0;
+            overflow-y:scroll;
+            /*overflow-y: no-display;*/
+            /*padding-right: 20px;*/
+        }
+
+        /*.marketName {
+            background-color: black;
+            font-size: 92px;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }*/
+
+        .marketName {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#555555+0,4e4e4e+100 */
+background: #555555; /* Old browsers */
+background: -moz-linear-gradient(top,  #555555 0%, #4e4e4e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #555555 0%,#4e4e4e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #555555 0%,#4e4e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#4e4e4e',GradientType=0 ); /* IE6-9 */
+
+            font-size: 70px;
+            color: white;
+            padding: 5px;
+            text-align: left;
+        }
+
+        .selection {
+            background-color: #606060;
+            color: #b2bbb2;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            font-size: 4.5em;
+            font-weight: normal;
+            padding: 5px;
+            border: 1px solid #737373;
+            outline: 2px solid #333333;
+            border-bottom: none;
+            border-left: none;
+        }
+        /*.selection {
+            background-color: #fddc00;
+            font-family: ' Verdana, Segoe UI', Tahoma, Geneva, sans-serif;
+            font-size: 5.5em;
+            color: black;
+            font-weight: bold;
+            padding: 5px;
+            border: 1px solid #5c5c5c;
+            border-bottom:none;
+            border-left: none;
+        }*/
+
+
+        .row {
+            margin:0 0 0 0;
+            background-color: #606060;
+        }
+        .time {
+            font-size: 1.7em;
+            color: green;
+        }
+
+        .matchName {
+            font-weight: bold;
+            text-align: center;
+            position: absolute;
+            top:0;
+            left:0;
+            background: #262626; /* Old browsers */
+            background: -moz-linear-gradient(top,  #262626 0%, #1d1d1d 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #262626 0%,#1d1d1d 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #262626 0%,#1d1d1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#1d1d1d',GradientType=0 ); /* IE6-9 */
+        }
+
+        #inplay {
+            position: absolute;
+            color: #fcdf05;
+            left: 56px;
+            top: 20px;
+            font-size: 45px;
+            z-index: 4000;
+            font-weight: bold;
+            border: 5px solid #fcdf05;
+            border-radius: 19px;
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    
+    <!--<div style="z-index: 2000;position: fixed;width:100%;font-size:100px;background-color:black; color:white;">EFBET На - Живо </div>-->
+    <div class="main container-fluid">
+        
+    </div>
+
+    <div class="logo" style="padding-top: 15px; z-index:3000;position:fixed; top: 970px;left:735px;">
+
+        <div class="col-lg-12 text-center">
+            <img src="../images/Logi.png" alt="Efbet" width="450" height="90">
+        </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+
+</body>
+
+</html>
+
+<!-- document.cookie="btag=a_1501b_166c_;path=/;domain=www.efbet.com;" -->
