@@ -151,9 +151,9 @@ namespace TheBannerMaker.Operations
 
         public static void UploadFileToFTPServer(string filename)
         {
-            string ftpServerIP = "195.64.160.20";
-            string ftpUserName = "banner";
-            string ftpPassword = "BANupload!";
+            string ftpServerIP = "";
+            string ftpUserName = "";
+            string ftpPassword = "";
 
             FileInfo objFile = new FileInfo(filename);
             FtpWebRequest objFTPRequest;
